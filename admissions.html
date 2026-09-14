@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Admissions & Scholarships | Aspire Group of Colleges Mailsi</title>
+  <meta name="description" content="Apply online for admission at Aspire College Mailsi (Ahmad Campus). Calculate your merit scholarship, review eligibility, and submit your registration.">
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, rgba(11, 26, 48, 0.94) 0%, rgba(0, 75, 147, 0.88) 100%),
+                  url('https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/1920x1080-New-1-2.jpg') center/cover no-repeat;
+      padding: var(--space-3xl) 0;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .page-hero h1 { color: #ffffff; margin-bottom: var(--space-sm); }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      font-size: var(--font-xs);
+      color: var(--color-gold);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .breadcrumb a { color: #cbd5e1; }
+
+    /* Admission Slip Modal */
+    .slip-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 26, 48, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-lg);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .slip-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slip-card {
+      background: #ffffff;
+      max-width: 650px;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      border-top: 6px solid var(--color-gold);
+    }
+
+    .slip-header {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: var(--space-lg);
+      text-align: center;
+    }
+
+    .slip-body {
+      padding: var(--space-2xl);
+    }
+
+    .slip-table {
+      width: 100%;
+      margin: var(--space-lg) 0;
+      font-size: var(--font-sm);
+    }
+
+    .slip-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .field-error {
+      font-size: 11px;
+      color: var(--color-danger);
+      margin-top: 4px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Communication Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-contact">
+        <a href="tel:0673202151" class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <strong>067-3202151</strong>
+        </a>
+        <span class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Syphon Road, near Garrison, Mailsi
+        </span>
+      </div>
+      <div class="top-bar-actions">
+        <span class="top-bar-badge pulse-badge">Admissions 2026 Open</span>
+        <a href="tel:0673202151" class="top-bar-link">Counseling Desk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-brand">
+        <div class="brand-crest">
+          <svg viewBox="0 0 640 512"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
+          <div class="brand-campus">Mailsi</div>
+          <div class="brand-tagline">Excellence in South Punjab</div>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="academics.html" class="nav-link">Academics</a>
+        <a href="admissions.html" class="nav-link active">Admissions</a>
+        <a href="staff.html" class="nav-link">Staff & Faculty</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="updates.html" class="nav-link">Updates</a>
+        <a href="help.html" class="nav-link">Help & FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#applicationFormSection" class="btn btn-gold btn-sm btn-apply-pulse">Apply Online</a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-name" style="font-size: 1rem;">ASPIRE <span>MAILSI</span></div>
+      <button class="drawer-close-btn">&times;</button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="academics.html" class="mobile-nav-link">Academics</a>
+      <a href="admissions.html" class="mobile-nav-link active">Admissions</a>
+      <a href="staff.html" class="mobile-nav-link">Staff & Faculty</a>
+      <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+      <a href="updates.html" class="mobile-nav-link">News & Updates</a>
+      <a href="help.html" class="mobile-nav-link">Help & FAQs</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+    </nav>
+  </aside>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Admissions Portal</span>
+      </div>
+      <h1 class="reveal">Admissions & Scholarships</h1>
+      <p class="section-description" style="color: #cbd5e1; max-width: 680px; margin: 0 auto;" class="reveal delay-100">
+        Secure your seat at Aspire College. Discover our transparent fee structure, calculate your scholarship entitlement, and submit your registration online.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scholarship Calculator & Criteria -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2 items-center">
+
+        <!-- Calculator Box -->
+        <div class="card reveal-left" style="border-top: 4px solid var(--color-gold);">
+          <span class="section-tag gold">Instant Calculator</span>
+          <h2 class="card-title" style="font-size: 1.5rem; margin-top: 6px;">Calculate Your Scholarship</h2>
+          <p class="card-text">Check how much tuition concession you qualify for based on your Matric marks or special quota categories.</p>
+
+          <div class="form-group">
+            <label for="calcMatricMarks" class="form-label">Obtained Marks in Matric</label>
+            <input type="number" id="calcMatricMarks" class="form-control" placeholder="e.g. 1020" min="0" max="1100">
+          </div>
+
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="calcTotalMarks" class="form-label">Total Marks</label>
+              <input type="number" id="calcTotalMarks" class="form-control" value="1100">
+            </div>
+            <div class="form-group">
+              <label for="calcQuota" class="form-label">Quota / Category</label>
+              <select id="calcQuota" class="form-control">
+                <option value="general">Open Merit</option>
+                <option value="kinship">Kinship (Sibling Studying)</option>
+                <option value="teacher">Teacher's Child</option>
+                <option value="orphan">Orphan / Need-Based</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" id="calculateScholarshipBtn" class="btn btn-primary btn-block">
+            <span>Calculate Scholarship</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </button>
+
+          <!-- Result Output Box -->
+          <div id="calcResultBox" style="display: none; margin-top: var(--space-lg); padding: var(--space-md); background: var(--color-primary-subtle); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <strong id="calcPercentageText" style="color: var(--color-primary-dark); font-size: 1.1rem;">--</strong>
+              <span id="calcScholarshipBadge" class="badge badge-gold">--</span>
+            </div>
+            <p id="calcRemarks" style="font-size: 13px; color: var(--color-text-body); margin: 0;"></p>
+          </div>
+        </div>
+
+        <!-- Scholarship Categories Overview -->
+        <div class="reveal-right">
+          <span class="section-tag">Empowerment Policy</span>
+          <h2 class="section-title"> Our <span class="highlight">Scholarship Schemes</span></h2>
+          <p class="card-text">Aspire firmly believes financial constraints should never extinguish the flame of talent. We allocate millions annually in fee concessions:</p>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-md);">
+            <div class="notice-card admission" style="padding: 12px 16px;">
+              <div class="notice-content">
+                <strong style="color: var(--color-primary);">100% Full Tuition Waiver</strong>
+                <div style="font-size: 13px; color: var(--color-text-muted);">For students scoring 95%+ in BISE Multan matriculation exams.</div>
+              </div>
+            </div>
+
+            <div class="notice-card" style="padding: 12px 16px;">
+              <div class="notice-content">
+                <strong style="color: var(--color-primary);">75% & 50% High-Merit Concessions</strong>
+                <div style="font-size: 13px; color: var(--color-text-muted);">For students with 90%+ and 80%+ marks respectively.</div>
+              </div>
+            </div>
+
+            <div class="notice-card" style="padding: 12px 16px;">
+              <div class="notice-content">
+                <strong style="color: var(--color-primary);">Special Humanitarian Concessions</strong>
+                <div style="font-size: 13px; color: var(--color-text-muted);">100% free education for orphans, 30% for siblings, and 50% for teacher's children.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Admission Procedure -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Procedure</span>
+        <h2 class="section-title">How to Secure Your <span class="highlight">Admission</span></h2>
+        <p class="section-description">A simple 4-step streamlined process from online registration to classroom orientation.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card reveal delay-100 text-center">
+          <div style="width: 44px; height: 44px; background: var(--color-primary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--space-md);">1</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 6px;">Submit Application</h4>
+          <p class="card-text" style="font-size: 13px;">Fill out the online application below or visit Ahmad Campus on Syphon Road Mailsi.</p>
+        </div>
+
+        <div class="card reveal delay-200 text-center">
+          <div style="width: 44px; height: 44px; background: var(--color-primary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--space-md);">2</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 6px;">Academic Counseling</h4>
+          <p class="card-text" style="font-size: 13px;">Meet our senior career counselor with your parents to finalize your best subject stream.</p>
+        </div>
+
+        <div class="card reveal delay-300 text-center">
+          <div style="width: 44px; height: 44px; background: var(--color-primary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--space-md);">3</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 6px;">Document Verification</h4>
+          <p class="card-text" style="font-size: 13px;">Submit Matric result card/roll no slip, 4 photos, B-Form & father's CNIC copy.</p>
+        </div>
+
+        <div class="card reveal delay-400 text-center">
+          <div style="width: 44px; height: 44px; background: var(--color-gold); color: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto var(--space-md);">4</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 6px;">Fee Voucher & ID</h4>
+          <p class="card-text" style="font-size: 13px;">Deposit fee with approved scholarship concession and collect your student ID & uniform slip.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Multi-Step Online Admission Form -->
+  <section class="section" id="applicationFormSection">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold">Apply Online</span>
+        <h2 class="section-title">Student Online <span class="highlight">Registration Form</span></h2>
+        <p class="section-description">Fill out this registration form to reserve your seat in the upcoming session. Our admissions officer will call you for verification.</p>
+      </div>
+
+      <div style="max-width: 820px; margin: 0 auto; background: #ffffff; padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); border: 1px solid var(--color-border);" class="reveal">
+        
+        <!-- Step Progress Indicator -->
+        <div class="step-indicator">
+          <div class="step-pill active" data-step="0">1</div>
+          <div class="step-pill" data-step="1">2</div>
+          <div class="step-pill" data-step="2">3</div>
+        </div>
+
+        <form id="admissionForm" novalidate>
+          <!-- STEP 1: Personal Details -->
+          <div class="form-step active" data-step="0">
+            <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark); font-size: 1.3rem;">Step 1: Student & Guardian Information</h3>
+            
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="studentName" class="form-label">Full Name of Student *</label>
+                <input type="text" id="studentName" class="form-control" placeholder="e.g. Muhammad Ahmad" required>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="fatherName" class="form-label">Father / Guardian Name *</label>
+                <input type="text" id="fatherName" class="form-control" placeholder="e.g. Tariq Mehmood" required>
+                <span class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="studentPhone" class="form-label">Contact / WhatsApp Number *</label>
+                <input type="tel" id="studentPhone" class="form-control" placeholder="e.g. 0300-1234567" required pattern="[0-9]{10,12}">
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="studentCNIC" class="form-label">B-Form / CNIC Number *</label>
+                <input type="text" id="studentCNIC" class="form-control" placeholder="e.g. 36603-xxxxxxx-x" required>
+                <span class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="homeAddress" class="form-label">Residential Address (Mailsi or City Area) *</label>
+              <input type="text" id="homeAddress" class="form-control" placeholder="Street / Tehsil / Area" required>
+              <span class="field-error"></span>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: var(--space-xl);">
+              <button type="button" class="btn btn-primary btn-step-next">Next: Academic Record &rarr;</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Academic Record -->
+          <div class="form-step" data-step="1">
+            <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark); font-size: 1.3rem;">Step 2: Previous Academic Record</h3>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="previousSchool" class="form-label">Previous School / Institute *</label>
+                <input type="text" id="previousSchool" class="form-control" placeholder="e.g. Govt High School Mailsi" required>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="previousBoard" class="form-label">Education Board *</label>
+                <select id="previousBoard" class="form-control" required>
+                  <option value="BISE Multan">BISE Multan</option>
+                  <option value="BISE Sahiwal">BISE Sahiwal</option>
+                  <option value="BISE Bahawalpur">BISE Bahawalpur</option>
+                  <option value="BISE Lahore">BISE Lahore</option>
+                  <option value="Federal Board">Federal Board (FBISE)</option>
+                  <option value="Other">Other Board</option>
+                </select>
+                <span class="field-error"></span>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="matricRollNo" class="form-label">Matric Roll Number *</label>
+                <input type="number" id="matricRollNo" class="form-control" placeholder="e.g. 458921" required>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="matricMarks" class="form-label">Matric Obtained Marks *</label>
+                <input type="number" id="matricMarks" class="form-control" placeholder="e.g. 980" required min="0" max="1100">
+                <span class="field-error"></span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: var(--space-xl);">
+              <button type="button" class="btn btn-outline btn-step-prev">&larr; Back</button>
+              <button type="button" class="btn btn-primary btn-step-next">Next: Program Selection &rarr;</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Program Selection & Review -->
+          <div class="form-step" data-step="2">
+            <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark); font-size: 1.3rem;">Step 3: Program Selection & Submit</h3>
+
+            <div class="form-group">
+              <label for="targetProgram" class="form-label">Desired Program of Study *</label>
+              <select id="targetProgram" class="form-control" required>
+                <option value="">-- Choose Program --</option>
+                <option value="F.Sc Pre-Medical">F.Sc Pre-Medical</option>
+                <option value="F.Sc Pre-Engineering">F.Sc Pre-Engineering</option>
+                <option value="ICS (Physics, Math, Computer)">ICS (Physics, Math, Computer)</option>
+                <option value="ICS (Stats, Math, Computer)">ICS (Stats, Math, Computer)</option>
+                <option value="I.Com (Commerce)">I.Com (Commerce)</option>
+                <option value="F.A (Humanities / Gen Science)">F.A (Humanities / General Science)</option>
+                <option value="BS Computer Science">BS Computer Science (4-Year)</option>
+                <option value="BS Information Technology">BS Information Technology (4-Year)</option>
+                <option value="BBA (Business Admin)">BBA (Business Administration)</option>
+                <option value="ADA / ADS (Associate Degree)">ADA / ADS (Associate Degree 2-Year)</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="transportRequired" class="form-label">College Transport Required?</label>
+              <select id="transportRequired" class="form-control">
+                <option value="No">No, self-transport</option>
+                <option value="Yes - Mailsi City">Yes, within Mailsi City</option>
+                <option value="Yes - Garrison / Syphon Road">Yes, Garrison / Syphon Road</option>
+                <option value="Yes - Tibba Sultan Pur">Yes, Tibba Sultan Pur route</option>
+                <option value="Yes - Mitroo / Surrounding">Yes, Mitroo / Surrounding rural route</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <input type="checkbox" required> I hereby certify that all information provided is genuine and I agree to abide by the discipline rules of Aspire Group of Colleges Mailsi (Ahmad Campus).
+              </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: var(--space-xl);">
+              <button type="button" class="btn btn-outline btn-step-prev">&larr; Back</button>
+              <button type="submit" class="btn btn-gold btn-lg">Submit Application Now &rarr;</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Confirmation Modal Slip -->
+  <div class="slip-modal" id="admissionSlipModal">
+    <div class="slip-card">
+      <div class="slip-header">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-gold);">Aspire Group of Colleges Mailsi (Ahmad Campus)</div>
+        <h3 style="color: #ffffff; margin: 4px 0;">Online Registration Confirmation</h3>
+        <div style="font-size: 12px; color: #cbd5e1;">Syphon Road, near Garrison, Mailsi, 61200 | Tel: 067-3202151</div>
+      </div>
+      <div class="slip-body">
+        <div style="text-align: center; margin-bottom: var(--space-md);">
+          <div style="display: inline-block; background: var(--color-primary-subtle); color: var(--color-primary); padding: 6px 14px; border-radius: var(--radius-sm); font-size: var(--font-sm); font-weight: 800;">
+            Reference Voucher No: <span id="slipRefNo">ASP-MLSI-2026-0000</span>
+          </div>
+        </div>
+
+        <table class="slip-table">
+          <tr>
+            <td><strong>Student Name:</strong></td>
+            <td id="slipStudentName">--</td>
+          </tr>
+          <tr>
+            <td><strong>Father / Guardian:</strong></td>
+            <td id="slipFatherName">--</td>
+          </tr>
+          <tr>
+            <td><strong>Program Applied:</strong></td>
+            <td id="slipProgram">--</td>
+          </tr>
+          <tr>
+            <td><strong>Contact Number:</strong></td>
+            <td id="slipPhone">--</td>
+          </tr>
+          <tr>
+            <td><strong>Submission Date:</strong></td>
+            <td id="slipDate">--</td>
+          </tr>
+          <tr>
+            <td><strong>Next Step:</strong></td>
+            <td style="color: var(--color-success); font-weight: 600;">Visit Ahmad Campus within 3 days with your Matric mark sheet to finalize admission.</td>
+          </tr>
+        </table>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: var(--space-lg);">
+          <button type="button" class="btn btn-outline btn-sm" onclick="window.print()">Print Voucher</button>
+          <button type="button" class="btn btn-primary btn-sm" id="closeSlipModal">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-col-about">
+          <div class="footer-brand">
+            <div class="brand-crest" style="width: 44px; height: 44px;">
+              <svg viewBox="0 0 640 512" style="width: 24px; height: 24px;"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg>
+            </div>
+            <div class="brand-text">
+              <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
+              <div class="brand-campus">Mailsi (Ahmad Campus)</div>
+            </div>
+          </div>
+          <p class="footer-desc">Syphon Road, near Mailsi, Garrison, Mailsi, 61200, Pakistan. Phone: 0673202151. Plus Code: Q5JG+QH Mailsi.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About Us</a></li>
+            <li class="footer-link-item"><a href="academics.html">Academics</a></li>
+            <li class="footer-link-item"><a href="admissions.html">Admissions</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Programs</h3>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Medical</a></li>
+            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Engineering</a></li>
+            <li class="footer-link-item"><a href="academics.html">ICS (Computer Science)</a></li>
+            <li class="footer-link-item"><a href="academics.html">I.Com (Commerce)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact</h3>
+          <p style="color: #cbd5e1; font-size: 13px;">Syphon Road, near Garrison, Mailsi, 61200<br>Phone: <strong>067-3202151</strong><br>Plus Code: Q5JG+QH</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div class="copyright-text">&copy; <span class="current-year">2026</span> Aspire Group of Colleges Mailsi (Ahmad Campus).</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/admissions.js"></script>
+</body>
+</html>

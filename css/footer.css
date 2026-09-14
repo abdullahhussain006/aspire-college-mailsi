@@ -1,0 +1,282 @@
+/* ==========================================================================
+   ASPIRE GROUP OF COLLEGES MAILSI (AHMAD CAMPUS)
+   Footer Styles & Social Links
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-navy);
+  color: #94a3b8;
+  padding-top: var(--space-3xl);
+  font-size: var(--font-sm);
+  border-top: 4px solid var(--color-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 75, 147, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.footer-top {
+  padding-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  }
+}
+
+/* Footer Column 1: Brand & About */
+.footer-col-about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.footer-brand .brand-name {
+  color: #ffffff;
+}
+
+.footer-brand .brand-name span {
+  color: var(--color-gold);
+}
+
+.footer-brand .brand-campus {
+  color: var(--color-gold);
+}
+
+.footer-desc {
+  line-height: 1.65;
+  color: #cbd5e1;
+  font-size: var(--font-sm);
+}
+
+.footer-affiliation {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  color: #e2e8f0;
+}
+
+.footer-affiliation svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-gold);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-xs);
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.social-btn:hover {
+  background: var(--color-primary-light);
+  color: #ffffff;
+  transform: translateY(-3px);
+  border-color: var(--color-primary-light);
+}
+
+.social-btn.social-fb:hover { background: #1877f2; }
+.social-btn.social-insta:hover { background: #e1306c; }
+.social-btn.social-wa:hover { background: #25d366; }
+.social-btn.social-yt:hover { background: #ff0000; }
+
+/* Footer Columns: Links */
+.footer-heading {
+  color: #ffffff;
+  font-size: var(--font-md);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link-item a {
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-link-item a svg {
+  width: 12px;
+  height: 12px;
+  color: var(--color-gold);
+  transition: transform var(--transition-fast);
+}
+
+.footer-link-item a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-link-item a:hover svg {
+  transform: translateX(2px);
+}
+
+/* Footer Contact List */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-contact-item a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-item a:hover {
+  color: var(--color-gold);
+}
+
+.footer-plus-code {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-gold);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-lg) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-inner {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.copyright-text {
+  font-size: var(--font-xs);
+  color: #94a3b8;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  font-size: var(--font-xs);
+}
+
+.footer-bottom-links a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--color-gold);
+}
