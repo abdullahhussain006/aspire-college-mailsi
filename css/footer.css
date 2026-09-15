@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ASPIRE GROUP OF COLLEGES MAILSI (AHMAD CAMPUS)
+   ASPIRE GROUP OF COLLEGES MAILSI 
    Footer Styles & Social Links
    ========================================================================== */
 
@@ -8,7 +8,7 @@
   color: #94a3b8;
   padding-top: var(--space-3xl);
   font-size: var(--font-sm);
-  border-top: 4px solid var(--color-gold);
+  border-top: 4px solid var(--color-primary);
   position: relative;
   overflow: hidden;
 }
@@ -20,8 +20,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 10% 20%, rgba(0, 75, 147, 0.15) 0%, transparent 40%),
-              radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 40%);
+  background: radial-gradient(circle at 10% 20%, rgba(200, 16, 46, 0.18) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(200, 16, 46, 0.08) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .footer-brand .brand-name span {
-  color: var(--color-gold);
+  color: var(--color-primary);
 }
 
 .footer-brand .brand-campus {
@@ -225,8 +225,8 @@
 
 .footer-plus-code {
   display: inline-block;
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--color-gold);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
   padding: 2px 8px;
   border-radius: var(--radius-sm);
   font-family: monospace;

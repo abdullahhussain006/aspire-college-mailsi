@@ -1,5 +1,5 @@
 /**
- * ASPIRE GROUP OF COLLEGES MAILSI (AHMAD CAMPUS)
+ * ASPIRE GROUP OF COLLEGES MAILSI
  * Updates & Helpdesk Module: Searchable Notice Board & FAQ Accordion
  */
 

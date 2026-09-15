@@ -1,24 +1,26 @@
 /* ==========================================================================
-   ASPIRE GROUP OF COLLEGES MAILSI (AHMAD CAMPUS)
+   ASPIRE GROUP OF COLLEGES MAILSI 
    Design Tokens & CSS Variables
    ========================================================================== */
 
 :root {
-  /* Brand Color Palette (Aspire Identity) */
-  --color-primary: #004b93;
-  --color-primary-dark: #003366;
-  --color-primary-hover: #003870;
-  --color-primary-light: #046bd2;
-  --color-primary-subtle: #ebf4fc;
-  --color-primary-glow: rgba(0, 75, 147, 0.25);
+  /* Brand Color Palette (Aspire Identity - Red & White Theme) */
+  --color-primary: #c8102e;
+  --color-primary-dark: #990000;
+  --color-primary-hover: #a30e25;
+  --color-primary-light: #e53935;
+  --color-primary-subtle: #fef2f2;
+  --color-primary-glow: rgba(200, 16, 46, 0.25);
 
-  /* Secondary & Accents */
-  --color-navy: #0b1a30;
-  --color-navy-surface: #132742;
+  /* Secondary & Accents: Refined Gold & Light Yellow Accents */
+  --color-navy: #180507;
+  --color-navy-surface: #2b0b10;
   --color-gold: #f59e0b;
   --color-gold-hover: #d97706;
   --color-gold-light: #fef3c7;
-  --color-gold-glow: rgba(245, 158, 11, 0.3);
+  --color-gold-subtle: #fffbeb;
+  --color-gold-text: #b45309;
+  --color-gold-glow: rgba(245, 158, 11, 0.35);
 
   /* Functional Status Colors */
   --color-success: #10b981;
@@ -78,7 +80,8 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  --shadow-glow-blue: 0 0 20px rgba(0, 75, 147, 0.35);
+  --shadow-glow-red: 0 0 20px rgba(200, 16, 46, 0.35);
+  --shadow-glow-blue: 0 0 20px rgba(200, 16, 46, 0.35);
   --shadow-glow-gold: 0 0 20px rgba(245, 158, 11, 0.4);
 
   /* Transitions */

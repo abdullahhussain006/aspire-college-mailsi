@@ -1,5 +1,5 @@
 /**
- * ASPIRE GROUP OF COLLEGES MAILSI (AHMAD CAMPUS)
+ * ASPIRE GROUP OF COLLEGES MAILSI 
  * Gallery Module: Category Filtering & Accessible Fullscreen Lightbox
  */
 
@@ -80,7 +80,7 @@ function initLightbox() {
 
     const currentItem = visibleItems[currentIndex];
     const imgSrc = currentItem.getAttribute("data-full") || currentItem.querySelector("img")?.src;
-    const title = currentItem.getAttribute("data-title") || "Aspire Ahmad Campus Mailsi";
+    const title = currentItem.getAttribute("data-title") || "Aspire College Mailsi";
     const category = currentItem.getAttribute("data-category") || "";
 
     if (lightboxImg) {

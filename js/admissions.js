@@ -1,5 +1,5 @@
 /**
- * ASPIRE GROUP OF COLLEGES MAILSI (AHMAD CAMPUS)
+ * ASPIRE GROUP OF COLLEGES MAILSI 
  * Admissions Portal: Multi-Step Application Form, Validation, & Scholarship Calculator
  */
 
@@ -83,7 +83,7 @@ function initMultiStepForm() {
     const studentName = form.querySelector("#studentName")?.value || "Student";
     const fatherName = form.querySelector("#fatherName")?.value || "Guardian";
     const program = form.querySelector("#targetProgram")?.value || "Intermediate";
-    const phone = form.querySelector("#studentPhone")?.value || "0673202151";
+    const phone = form.querySelector("#studentPhone")?.value || "03070891119";
     const marks = form.querySelector("#matricMarks")?.value || "N/A";
 
     const refNo = `ASP-MLSI-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -102,6 +102,22 @@ function initMultiStepForm() {
     if (slipProgram) slipProgram.textContent = program;
     if (slipPhone) slipPhone.textContent = phone;
     if (slipDate) slipDate.textContent = new Date().toLocaleDateString("en-PK", { year: "numeric", month: "long", day: "numeric" });
+
+    // Set WhatsApp Share Link for the Voucher
+    const waShareBtn = document.getElementById("slipWhatsAppShareBtn");
+    if (waShareBtn) {
+      const waMsg = 
+`*Online Admission Registration - Aspire College Mailsi*
+🔖 *Voucher No:* ${refNo}
+👤 *Student Name:* ${studentName}
+👨 *Father/Guardian:* ${fatherName}
+🎓 *Program Applied:* ${program}
+📞 *Contact Phone:* ${phone}
+📊 *Matric Marks:* ${marks}
+📅 *Date:* ${new Date().toLocaleDateString("en-PK")}`;
+
+      waShareBtn.href = `https://api.whatsapp.com/send?phone=923037376611&text=${encodeURIComponent(waMsg)}`;
+    }
 
     // Show Confirmation Modal
     if (confirmationModal) {
@@ -154,7 +170,7 @@ function initScholarshipCalculator() {
     if (quota === "orphan") {
       scholarshipPercentage = 100;
       title = "100% Free Education (Orphan Support Scheme)";
-      remarks = "Aspire Ahmad Campus Mailsi honors deserving students with complete tuition waiver.";
+      remarks = "Aspire College Mailsi honors deserving students with complete tuition waiver.";
     } else if (quota === "kinship") {
       scholarshipPercentage = 30;
       title = "30% Kinship Concession";
@@ -180,7 +196,7 @@ function initScholarshipCalculator() {
       } else if (percentage >= 70) {
         scholarshipPercentage = 30;
         title = "30% Aspire Encouragement Concession";
-        remarks = "30% concession granted to encourage higher studies at Ahmad Campus.";
+        remarks = "30% concession granted to encourage higher studies at Aspire College Mailsi.";
       } else {
         scholarshipPercentage = 10;
         title = "Early Bird Admission Concession (10%)";
