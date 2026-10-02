@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Photo Gallery | Aspire Group of Colleges Mailsi</title>
-  <meta name="description" content="Explore photos of campus life, science laboratories, computer labs, sports events, and ceremonies at Aspire Group of Colleges Mailsi.">
+  <title>Campus Video Gallery | Aspire Group of Colleges Mailsi</title>
+  <meta name="description" content="Watch official campus video reels of Aspire Group of Colleges Mailsi — featuring campus tour, building, student life, science labs, morning assembly, and result ceremony.">
 
   <!-- Style Sheets -->
   <link rel="stylesheet" href="css/variables.css">
@@ -16,24 +16,52 @@
 
   <style>
     .page-hero {
-      background: linear-gradient(135deg, rgba(24, 5, 7, 0.90) 0%, rgba(180, 10, 35, 0.82) 100%),
-                  url('images/campus-building.jpg') center/cover no-repeat;
-      padding: var(--space-3xl) 0;
+      background: linear-gradient(135deg, rgba(20, 4, 6, 0.94) 0%, rgba(160, 10, 30, 0.88) 100%);
+      padding: 3.25rem 0;
       color: #ffffff;
       text-align: center;
+      position: relative;
     }
 
-    .page-hero h1 { color: #ffffff; margin-bottom: var(--space-sm); }
+    .page-hero h1 { 
+      color: #ffffff; 
+      margin-bottom: 8px; 
+      font-size: clamp(1.85rem, 3.5vw, 2.45rem);
+      line-height: 1.2;
+    }
+
+    @media (max-width: 991px) {
+      .page-hero {
+        padding: 2.5rem 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.5rem, 3.2vw, 1.95rem);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 1.75rem 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.35rem, 4.8vw, 1.65rem);
+        margin-bottom: 6px;
+      }
+      .breadcrumb {
+        font-size: 10.5px;
+      }
+    }
 
     .breadcrumb {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      font-size: var(--font-xs);
+      gap: 6px;
+      font-size: 11.5px;
       color: var(--color-gold);
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 1px;
+      margin-bottom: 6px;
     }
 
     .breadcrumb a { color: #cbd5e1; }
@@ -49,9 +77,8 @@
           <img src="images/aspire-logo.png" alt="Aspire Group of Colleges Logo">
         </div>
         <div class="brand-text">
-          <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
+          <div class="brand-name">ASPIRE <span>COLLEGE</span></div>
           <div class="brand-campus">Mailsi</div>
-          <div class="brand-tagline">Excellence in South Punjab</div>
         </div>
       </a>
 
@@ -100,170 +127,263 @@
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Photo Gallery</span>
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Gallery</span>
       </div>
-      <h1 class="reveal">Campus Life in Pictures</h1>
-      <p class="section-description" style="color: #cbd5e1; max-width: 650px; margin: 0 auto;" class="reveal delay-100">
-        A glimpse into daily academic life, science and computing laboratories, sports festivals, and prize distributions at Aspire.
+      <h1 class="reveal">Campus Video Gallery</h1>
+      <p class="section-description" style="color: #cbd5e1; max-width: 620px; margin: 0 auto;" class="reveal delay-100">
+        Watch official campus video reels of Aspire Group of Colleges Mailsi.
       </p>
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section class="section">
-    <div class="container">
+  <!-- Main Content: 6 Dedicated Video Sections -->
+  <main>
 
-      <!-- Category Filter Tabs -->
-      <div class="filter-tabs reveal">
-        <button class="filter-btn active gallery-filter-btn" data-filter="all">All Photos</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="campus">Campus & Building</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="labs">Science & IT Labs</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="sports">Sports & Gala</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="events">Events & Seminars</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="classroom">Classroom Learning</button>
-      </div>
+    <!-- SECTION 1: Campus Intro -->
+    <section class="campus-video-section" id="campus-intro">
+      <div class="container">
+        <div class="video-grid-row reveal">
+          <!-- Left: Video Player -->
+          <div class="video-col-media">
+            <div class="video-player-frame">
+            <video class="campus-video-player" controls playsinline preload="metadata">
+              <source src="videos/campus-intro.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
 
-      <!-- Gallery Grid -->
-      <div class="gallery-grid" id="photoGallery">
-
-        <!-- Photo 1: Campus Building -->
-        <div class="gallery-item reveal" data-category="campus" data-title="Campus Main Building" data-full="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/campas-banner.jpg">
-          <img src="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/campas-banner.jpg" alt="Campus Building" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Campus Building</div>
-            <div class="gallery-item-title">Main Campus Building</div>
+          <!-- Right: Description & Highlights -->
+          <div class="video-col-content">
+            <h2 class="video-section-title">Campus Introduction</h2>
+            <p class="video-section-desc">
+              A comprehensive introduction to Aspire Group of Colleges Mailsi, presenting our educational philosophy, leadership team, academic faculties, and the encouraging environment built for intermediate and BS undergraduate students.
+            </p>
+            <div class="video-highlights-list">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Institutional vision and high academic standards in Mailsi</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Experienced faculty leadership & comprehensive student mentorship</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Dedicated separate educational wings for boys and girls</span>
+            </div>
           </div>
         </div>
-
-        <!-- Photo 2: Biology Lab -->
-        <div class="gallery-item reveal delay-100" data-category="labs" data-title="Modern Biology & Microscopy Laboratory" data-full="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-1-300x250.jpeg">
-          <img src="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-1-300x250.jpeg" alt="Biology Lab" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Science & IT Labs</div>
-            <div class="gallery-item-title">Modern Biology & Microscopy Laboratory</div>
-          </div>
-        </div>
-
-        <!-- Photo 3: Computer Lab -->
-        <div class="gallery-item reveal delay-200" data-category="labs" data-title="High-Speed Computer & IT Lab" data-full="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-7.41.58-PM-300x250.jpeg">
-          <img src="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-7.41.58-PM-300x250.jpeg" alt="Computer Lab" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Science & IT Labs</div>
-            <div class="gallery-item-title">High-Speed Computer & IT Lab</div>
-          </div>
-        </div>
-
-        <!-- Photo 4: Classroom -->
-        <div class="gallery-item reveal delay-100" data-category="classroom" data-title="Air-Conditioned Interactive Smart Classroom" data-full="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-2-300x250.jpeg">
-          <img src="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-2-300x250.jpeg" alt="Smart Classroom" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Classroom Learning</div>
-            <div class="gallery-item-title">Air-Conditioned Interactive Smart Classroom</div>
-          </div>
-        </div>
-
-        <!-- Photo 5: Sports Gala -->
-        <div class="gallery-item reveal delay-200" data-category="sports" data-title="Annual Sports Gala & Athletics Day" data-full="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-3-300x250.jpeg">
-          <img src="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-3-300x250.jpeg" alt="Sports Gala" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Sports & Gala</div>
-            <div class="gallery-item-title">Annual Sports Gala & Athletics Day</div>
-          </div>
-        </div>
-
-        <!-- Photo 6: Prize Distribution -->
-        <div class="gallery-item reveal delay-300" data-category="events" data-title="High Achievers & Merit Scholarship Ceremony" data-full="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-4-300x250.jpeg">
-          <img src="https://aspirecolleges.edu.pk/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-26-at-8.04.05-PM-4-300x250.jpeg" alt="Merit Ceremony" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Events & Seminars</div>
-            <div class="gallery-item-title">High Achievers & Merit Scholarship Ceremony</div>
-          </div>
-        </div>
-
-        <!-- Photo 7: Chemistry Lab -->
-        <div class="gallery-item reveal delay-100" data-category="labs" data-title="Chemistry Lab Titration Demonstration" data-full="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80">
-          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80" alt="Chemistry Lab" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Science & IT Labs</div>
-            <div class="gallery-item-title">Chemistry Lab Titration Demonstration</div>
-          </div>
-        </div>
-
-        <!-- Photo 8: Library Reading Area -->
-        <div class="gallery-item reveal delay-200" data-category="campus" data-title="College Central Reference Library" data-full="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&auto=format&fit=crop&q=80">
-          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&auto=format&fit=crop&q=80" alt="College Library" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Campus & Building</div>
-            <div class="gallery-item-title">College Central Reference Library</div>
-          </div>
-        </div>
-
-        <!-- Photo 9: Sports Playground -->
-        <div class="gallery-item reveal delay-100" data-category="sports" data-title="Spacious Sports Playground & Athletics Ground" data-full="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&auto=format&fit=crop&q=80">
-          <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&auto=format&fit=crop&q=80" alt="Sports Playground" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Sports & Gala</div>
-            <div class="gallery-item-title">Spacious Sports Playground & Athletics Ground</div>
-          </div>
-        </div>
-
-        <!-- Photo 10: Student Canteen -->
-        <div class="gallery-item reveal delay-200" data-category="campus" data-title="Hygienic Student Canteen & Cafeteria" data-full="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=80">
-          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=80" alt="Student Canteen" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Campus & Building</div>
-            <div class="gallery-item-title">Hygienic Student Canteen & Cafeteria</div>
-          </div>
-        </div>
-
-        <!-- Photo 11: Gardens & Lawns -->
-        <div class="gallery-item reveal delay-300" data-category="campus" data-title="Lush Green Botanical Gardens & Lawns" data-full="images/campus-gardens.jpg">
-          <img src="images/campus-gardens.jpg" alt="Lush Gardens and Green Lawns" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Campus Grounds</div>
-            <div class="gallery-item-title">Lush Green Botanical Gardens & Lawns</div>
-          </div>
-        </div>
-
-        <!-- Photo 12: Paved Sidewalks -->
-        <div class="gallery-item reveal delay-100" data-category="campus" data-title="Paved Campus Sidewalks & Walking Pathways" data-full="images/campus-sidewalks.jpg">
-          <img src="images/campus-sidewalks.jpg" alt="Paved Campus Sidewalks and Pathways" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Campus Grounds</div>
-            <div class="gallery-item-title">Paved Campus Sidewalks & Walking Pathways</div>
-          </div>
-        </div>
-
-        <!-- Photo 13: Dedicated Girls & Boys Wings -->
-        <div class="gallery-item reveal delay-200" data-category="campus" data-title="Dedicated Separate Campuses for Boys & Girls" data-full="https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=80">
-          <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=80" alt="Separate Campus Wings" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <div class="gallery-item-category">Campus & Building</div>
-            <div class="gallery-item-title">Dedicated Separate Campuses for Boys & Girls</div>
-          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- SECTION 2: Campus Building -->
+    <section class="campus-video-section" id="campus-building">
+      <div class="container">
+        <div class="video-grid-row reveal">
+          <!-- Left: Video Player -->
+          <div class="video-col-media">
+            <div class="video-player-frame">
+            <video class="campus-video-player" controls playsinline preload="metadata">
+              <source src="videos/campus-building.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
 
-  <!-- Fullscreen Lightbox Modal -->
-  <div class="lightbox-modal" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
-    <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
-    <button class="lightbox-prev" aria-label="Previous Image">&larr;</button>
-    <button class="lightbox-next" aria-label="Next Image">&rarr;</button>
-    <div class="lightbox-content">
-      <img src="" alt="" class="lightbox-image">
-      <div class="lightbox-caption"></div>
-    </div>
-  </div>
+          <!-- Right: Description & Highlights -->
+          <div class="video-col-content">
+            <h2 class="video-section-title">Main Campus Building</h2>
+            <p class="video-section-desc">
+              Explore our purpose-built campus architecture on Syphon Road near Garrison, Mailsi. This video showcases our multi-story academic blocks, air-conditioned smart lecture rooms, secure boundaries, and expansive green lawns.
+            </p>
+            <div class="video-highlights-list">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Purpose-built multi-story academic campus blocks with seperate Boys & Girls Campuses</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Air-conditioned classrooms with interactive learning facilities</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Centrally located on Syphon Road, near Garrison, Mailsi</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- SECTION 3: Result Ceremony -->
+    <section class="campus-video-section" id="result-ceremony-video">
+      <div class="container">
+        <div class="video-grid-row reveal">
+          <!-- Left: Video Player -->
+          <div class="video-col-media">
+            <div class="video-player-frame">
+            <video class="campus-video-player" controls playsinline preload="metadata">
+              <source src="videos/result-ceremony-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
+
+          <!-- Right: Description & Highlights -->
+          <div class="video-col-content">
+            <h2 class="video-section-title">2026 Result Ceremony</h2>
+            <p class="video-section-desc">
+              The grand celebration of academic triumph at Aspire College Mailsi. Watch high achievers and board position holders receiving scholarship cheques, medals, honorary shields, and the special Umrah package in the presence of parents and faculty.
+            </p>
+            <div class="video-highlights-list">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Grand awards distribution for BISE Multan Board top rankers</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Umrah package & cash scholarship prizes for position holders</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Proud celebration shared with parents, teachers & Students</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 4: Day Start -->
+    <section class="campus-video-section" id="day-start">
+      <div class="container">
+        <div class="video-grid-row reveal">
+          <!-- Left: Video Player -->
+          <div class="video-col-media">
+            <div class="video-player-frame">
+            <video class="campus-video-player" controls playsinline preload="metadata">
+              <source src="videos/day-start.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
+
+          <!-- Right: Description & Highlights -->
+          <div class="video-col-content">
+            <h2 class="video-section-title">Day Start</h2>
+            <p class="video-section-desc">
+              Experience the disciplined and spirited morning start at Aspire College Mailsi. Students arriving with enthusiasm, gathering for recitation of Holy Quran, National Anthem, and daily motivational briefing from college proctors and faculty.
+            </p>
+            <div class="video-highlights-list">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Disciplined morning arrival and energetic college environment</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Reverent morning assembly, Quran recitation & National Anthem</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Seamless orderly transition to scheduled academic periods</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: A Day of an Aspirian -->
+    <section class="campus-video-section" id="a-day-of-aspirian">
+      <div class="container">
+        <div class="video-grid-row reveal">
+          <!-- Left: Video Player -->
+          <div class="video-col-media">
+            <div class="video-player-frame">
+            <video class="campus-video-player" controls playsinline preload="metadata">
+              <source src="videos/a-day-of-aspirian.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
+
+          <!-- Right: Description & Highlights -->
+          <div class="video-col-content">
+            <h2 class="video-section-title">A Day of an Aspirian</h2>
+            <p class="video-section-desc">
+              Step into the shoes of an Aspirian. This video highlights the dynamic daily routine of our students — interactive classroom discussions, collaborative group study, library research, proctor guidance, and campus interactions.
+            </p>
+            <div class="video-highlights-list">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Interactive classroom sessions with subject specialists</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Student camaraderie, proctor leadership & mutual motivation</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>A holistic balance of high academic focus and campus recreation</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Lab & Study -->
+    <section class="campus-video-section" id="lab-and-study-video">
+      <div class="container">
+        <div class="video-grid-row reveal">
+          <!-- Left: Video Player -->
+          <div class="video-col-media">
+            <div class="video-player-frame">
+            <video class="campus-video-player" controls playsinline preload="metadata">
+              <source src="videos/lab-and-study-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
+
+          <!-- Right: Description & Highlights -->
+          <div class="video-col-content">
+            <h2 class="video-section-title">Lab & Study</h2>
+            <p class="video-section-desc">
+              Discover our hands-on practical laboratories and dedicated study environment. Students conduct scientific experiments in Chemistry, Physics, and Biology, alongside computing practicals in modern IT labs for BISE Multan Board excellence.
+            </p>
+            <div class="video-highlights-list">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Fully equipped apparatus for Physics, Chemistry & Biology</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>High-performance computer lab with modern Systems</span>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Practical demonstration by senior subject faculty members</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+  
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-grid">
+        <!-- Col 1: Brand & About -->
         <div class="footer-col-about">
-          <div class="footer-brand">
+          <a href="index.html" class="footer-brand">
             <div class="brand-crest" style="width: 44px; height: 44px;">
               <img src="images/aspire-logo.png" alt="Aspire Group of Colleges Logo">
             </div>
@@ -271,42 +391,96 @@
               <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
               <div class="brand-campus">Mailsi</div>
             </div>
-          </div>
-          <p class="footer-desc">Syphon Road, near Mailsi, Garrison, Mailsi, Punjab, Pakistan. Helpline: 0307-0891119 | Tel: 067-3202151 | WhatsApp: 0303-7376611. <a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); font-weight: 600; text-decoration: underline; white-space: nowrap;">(View on Google Maps)</a></p>
+          </a>
+          <p class="footer-desc">
+            Aspire Group of Colleges Mailsi delivers exceptional academic training, high moral values, and board distinction coaching. Proud part of Pakistan's 3rd ranked college group.
+          </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" class="social-btn social-fb" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://api.whatsapp.com/send?phone=923037376611" class="social-btn social-wa" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+            <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" target="_blank" rel="noopener noreferrer" class="social-btn social-fb" title="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/aspirecollegemailsiofficial/" target="_blank" rel="noopener noreferrer" class="social-btn social-insta" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" class="social-btn social-wa" title="WhatsApp Helpline">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
           </div>
         </div>
+
+        <!-- Col 2: Quick Links -->
         <div>
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-links">
-            <li class="footer-link-item"><a href="index.html">Home</a></li>
-            <li class="footer-link-item"><a href="about.html">About Us</a></li>
-            <li class="footer-link-item"><a href="academics.html">Academics</a></li>
-            <li class="footer-link-item"><a href="admissions.html">Admissions</a></li>
-            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+            <li class="footer-link-item"><a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Home</a></li>
+            <li class="footer-link-item"><a href="about.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>About Campus</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Academics</a></li>
+            <li class="footer-link-item"><a href="admissions.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Admissions</a></li>
+            <li class="footer-link-item"><a href="staff.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Faculty & Staff</a></li>
+            <li class="footer-link-item"><a href="gallery.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Video Gallery</a></li>
+            <li class="footer-link-item"><a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Contact Campus</a></li>
           </ul>
         </div>
+
+        <!-- Col 3: Academic Programs -->
         <div>
-          <h3 class="footer-heading">Programs</h3>
+          <h3 class="footer-heading">Our Programs</h3>
           <ul class="footer-links">
-            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Medical</a></li>
-            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Engineering</a></li>
-            <li class="footer-link-item"><a href="academics.html">ICS (Computer Science)</a></li>
-            <li class="footer-link-item"><a href="academics.html">BS Programs (CS, Eng, Zoo, AI, Math)</a></li>
-            <li class="footer-link-item"><a href="academics.html">Diploma in IT (DIT)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.Sc Pre-Medical</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.Sc Pre-Engineering</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>ICS (Computer Science)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>I.Com (Commerce)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.A Arts & Humanities</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>BS Programs (4-Years)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Diploma in IT (DIT)</a></li>
           </ul>
         </div>
+
+        <!-- Col 4: Campus Location & Contact -->
         <div>
-          <h3 class="footer-heading">Contact & Hours</h3>
-          <p style="color: #cbd5e1; font-size: 13px;">Syphon Road, near Garrison, Mailsi, Punjab<br>Helpline: <strong>0307-0891119</strong><br>Phone: <strong>067-3202151</strong> | WhatsApp: <strong>0303-7376611</strong><br>Email: <strong>principal.mailsi@aspirecolleges.edu.pk</strong><br>Mon-Thu & Sat: 8:00 AM – 2:00 PM<br>Fri: 8:00 AM – 12:00 PM (Sun Closed)</p>
+          <h3 class="footer-heading">Campus Location</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Syphon Road, near Garrison, Mailsi, Punjab, Pakistan</strong>
+                <div><a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-plus-code" title="Open Aspire College Mailsi on Google Maps">📍 Google Maps: Q5JG+QH Mailsi</a></div>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <strong>Admissions Helpline & Tel:</strong><br>
+                <a href="tel:03070891119" style="font-weight: 700; color: var(--color-gold);">0307-0891119</a><br>
+                <span>Tel: </span><a href="tel:0673202151">067-3202151</a> | <span>WhatsApp: </span><a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener" style="color: #25d366;">0303-7376611</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <strong>Principal Office Email:</strong><br>
+                <a href="mailto:principal.mailsi@aspirecolleges.edu.pk">principal.mailsi@aspirecolleges.edu.pk</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <strong>Visiting Hours:</strong><br>
+                Mon - Thu & Sat: 8:00 AM – 2:00 PM<br>
+                Fri: 8:00 AM – 12:00 PM | Sun: Closed
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Bottom Copyright -->
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div class="copyright-text">&copy; <span class="current-year">2026</span> Abdullah Khan Cheena. All Rights Reserved.</div>
+        <div class="copyright-text">
+          &copy; <span class="current-year">2026</span> Aspire College Mailsi. All Rights Reserved.
+        </div>
       </div>
     </div>
   </footer>

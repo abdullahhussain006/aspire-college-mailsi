@@ -18,56 +18,83 @@
     .page-hero {
       background: linear-gradient(135deg, rgba(24, 5, 7, 0.90) 0%, rgba(180, 10, 35, 0.82) 100%),
                   url('images/campus-building.jpg') center/cover no-repeat;
-      padding: var(--space-3xl) 0;
+      padding: 3.25rem 0;
       color: #ffffff;
       text-align: center;
     }
 
-    .page-hero h1 { color: #ffffff; margin-bottom: var(--space-sm); }
+    .page-hero h1 {
+      color: #ffffff;
+      font-size: clamp(1.85rem, 3.5vw, 2.45rem);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 991px) {
+      .page-hero {
+        padding: 2.5rem 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.5rem, 3.2vw, 1.95rem);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 1.75rem 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.35rem, 4.8vw, 1.65rem);
+        margin-bottom: 6px;
+      }
+      .breadcrumb {
+        font-size: 10.5px;
+      }
+    }
 
     .breadcrumb {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      font-size: var(--font-xs);
+      gap: 6px;
+      font-size: 11.5px;
       color: var(--color-gold);
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 1px;
+      margin-bottom: 6px;
     }
 
     .breadcrumb a { color: #cbd5e1; }
 
     .search-bar-wrap {
-      max-width: 580px;
-      margin: 0 auto var(--space-2xl);
+      max-width: 520px;
+      margin: 0 auto var(--space-lg);
       position: relative;
     }
 
     .search-input {
       width: 100%;
-      padding: 14px 20px 14px 48px;
-      font-size: var(--font-base);
+      padding: 10px 18px 10px 42px;
+      font-size: 14px;
       border-radius: var(--radius-full);
       border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-sm);
       outline: none;
       transition: all var(--transition-fast);
     }
 
     .search-input:focus {
       border-color: var(--color-primary-light);
-      box-shadow: 0 0 0 3px rgba(4, 107, 210, 0.2);
+      box-shadow: 0 0 0 2px rgba(4, 107, 210, 0.2);
     }
 
     .search-icon-inside {
       position: absolute;
-      left: 18px;
+      left: 14px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--color-text-muted);
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
     }
   </style>
 </head>
@@ -81,9 +108,8 @@
           <img src="images/aspire-logo.png" alt="Aspire Group of Colleges Logo">
         </div>
         <div class="brand-text">
-          <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
+          <div class="brand-name">ASPIRE <span>COLLEGE</span></div>
           <div class="brand-campus">Mailsi</div>
-          <div class="brand-tagline">Excellence in South Punjab</div>
         </div>
       </a>
 
@@ -146,13 +172,14 @@
     <div class="container">
       <div class="search-bar-wrap reveal">
         <svg class="search-icon-inside" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="noticeSearchInput" class="search-input" placeholder="Search notices by keyword (e.g., Datesheet, Admission, Multan, Merit)...">
+        <input type="text" id="noticeSearchInput" class="search-input" placeholder="Search notices by keyword (e.g., ACIT, Sports Gala, Orientation, Farewell, Scholarship, Proctor)...">
       </div>
 
       <div class="filter-tabs reveal">
-        <button class="filter-btn active notice-filter-btn" data-filter="all">All Circulars</button>
-        <button class="filter-btn notice-filter-btn" data-filter="admissions">Admissions</button>
-        <button class="filter-btn notice-filter-btn" data-filter="events">Events & Holidays</button>
+        <button class="filter-btn active notice-filter-btn" data-filter="all">All Updates & Notices</button>
+        <button class="filter-btn notice-filter-btn" data-filter="acit">ACIT Scholarship Test</button>
+        <button class="filter-btn notice-filter-btn" data-filter="events">Campus Events & Ceremonies</button>
+        <button class="filter-btn notice-filter-btn" data-filter="admissions">Admissions & Academics</button>
       </div>
     </div>
   </section>
@@ -162,78 +189,315 @@
     <div class="container">
       <div style="display: flex; flex-direction: column; gap: var(--space-md); max-width: 900px; margin: 0 auto;" id="noticesList">
 
-        <!-- Notice 1 -->
-        <div class="notice-card urgent notice-card-item reveal" data-category="admissions">
-          <div class="notice-date-box">
-            <div class="notice-date-day">07</div>
-            <div class="notice-date-month">May</div>
+        
+        <!-- Notice: ACIT (Aspire College Intelligence Test) -->
+        <div class="notice-card admission notice-card-item reveal" data-category="acit admissions" style="border-left-width: 5px;">
+          <div class="notice-icon-box gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <div class="notice-content">
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
-             
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap;">
+              <span class="badge badge-gold">Annual Scholarship Test</span>
+              <span class="badge badge-primary">Conducted in February</span>
+              <span class="badge badge-success">Up to 100% Scholarship</span>
+            </div>
+            <h3 class="notice-title" style="font-size: 1.15rem; color: var(--color-primary-dark);">Aspire College Intelligence Test (ACIT)</h3>
+            <p class="notice-excerpt" style="margin-bottom: 12px; line-height: 1.6;">
+              The official <strong>Aspire College Intelligence Test (ACIT)</strong> is conducted annually in February at Aspire College Mailsi. Designed to evaluate intellectual potential, ACIT awards merit scholarships and special prizes to distinction holders across Science and Arts disciplines.
+            </p>
+
+            <!-- Test Disciplines Breakdown -->
+            <div style="background: var(--color-bg-alt); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-bottom: 12px;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+                <div>
+                  <strong style="color: var(--color-primary-dark); font-size: 13px; display: block; margin-bottom: 4px;">🔬 Science Group (Total Marks: 100)</strong>
+                  <div style="font-size: 12.5px; color: var(--color-text-dark); line-height: 1.5;">
+                    1. English &nbsp;•&nbsp; 2. Mathematics &nbsp;•&nbsp; 3. Physics &nbsp;•&nbsp; 4. Chemistry &nbsp;•&nbsp; 5. Biology / Computer Science
+                  </div>
+                </div>
+                <div>
+                  <strong style="color: var(--color-primary-dark); font-size: 13px; display: block; margin-bottom: 4px;">🎨 Arts Group (Total Marks: 100)</strong>
+                  <div style="font-size: 12.5px; color: var(--color-text-dark); line-height: 1.5;">
+                    1. English &nbsp;•&nbsp; 2. General Science &nbsp;•&nbsp; 3. General Mathematics
+                  </div>
+                </div>
+              </div>
+
+              <!-- Test Format & Specifications -->
+              <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--color-border); font-size: 12px; display: flex; flex-wrap: wrap; gap: 8px 14px; color: var(--color-text-muted);">
+                <span>📝 <strong>Format:</strong> 100 MCQs</span>
+                <span>⏱️ <strong>Time Allowed:</strong> 90 Minutes</span>
+                <span>📍 <strong>Test Center:</strong> Aspire College Mailsi</span>
+                <span>📅 <strong>Schedule:</strong> Conducted in February Month</span>
+              </div>
+            </div>
+
+            <!-- Position Holder Prizes & Concessions -->
+            <div style="margin-bottom: 6px;">
+              <strong style="font-size: 12.5px; color: var(--color-primary-dark); display: block; margin-bottom: 6px;">🏆 Position Holder Scholarships & Fee Concessions:</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px;">
+                <div style="background: rgba(212, 160, 23, 0.12); border: 1px solid rgba(212, 160, 23, 0.35); border-radius: var(--radius-sm); padding: 8px 10px; text-align: center;">
+                  <div style="font-weight: 800; color: #b45309; font-size: 13px;">🥇 1st Position</div>
+                  <div style="font-size: 11.5px; color: var(--color-text-dark); font-weight: 600;">Full Scholarship & Special Prizes</div>
+                </div>
+                <div style="background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 8px 10px; text-align: center;">
+                  <div style="font-weight: 800; color: var(--color-primary); font-size: 13px;">🥈 2nd Position</div>
+                  <div style="font-size: 11.5px; color: var(--color-text-dark); font-weight: 600;">75% Fee Concession</div>
+                </div>
+                <div style="background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 8px 10px; text-align: center;">
+                  <div style="font-weight: 800; color: var(--color-primary); font-size: 13px;">🥉 3rd Position</div>
+                  <div style="font-size: 11.5px; color: var(--color-text-dark); font-weight: 600;">50% Fee Concession</div>
+                </div>
+                <div style="background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 8px 10px; text-align: center;">
+                  <div style="font-weight: 800; color: var(--color-primary); font-size: 13px;">🎖️ 4th Position</div>
+                  <div style="font-size: 11.5px; color: var(--color-text-dark); font-weight: 600;">25% Fee Concession</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Motivational Quote for Students -->
+            <div style="background: linear-gradient(135deg, rgba(212, 160, 23, 0.12), rgba(180, 10, 35, 0.05)); border-left: 3px solid var(--color-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: 14px; font-style: italic; color: var(--color-primary-dark); font-size: 12.5px; line-height: 1.55;">
+              ✨ <strong>Motivational Thought:</strong> "Knowledge is your greatest weapon, but intellect sharpened through courage turns into triumph. Dare to challenge yourself, test your true potential, and let ACIT be your stepping stone to greatness!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Notice: Admissions Open -->
+        <div class="notice-card urgent notice-card-item reveal delay-100" data-category="admissions">
+          <div class="notice-icon-box danger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-danger">Admissions Open</span>
+              <span class="badge badge-gold">Merit Concessions</span>
             </div>
             <h3 class="notice-title">Admissions Open for 1st Year Intermediate (F.Sc, ICS, I.Com & FA)</h3>
             <p class="notice-excerpt">
-              Online registration and campus prospectus distribution for this year is now actively open at Aspire College Mailsi. Students scoring 90%+ in matriculation are eligible for instant merit scholarships.
+              Online registration and campus prospectus distribution is actively open at Aspire College Mailsi. Students scoring 90%+ in matriculation examinations are eligible for instant merit scholarships and special fee concessions.
             </p>
           </div>
-          <a href="admissions.html" class="btn btn-outline btn-sm" style="align-self: center;">Apply Now</a>
         </div>
 
-        <!-- Notice 2 -->
-        <div class="notice-card notice-card-item reveal delay-100" data-category="exams">
-          <div class="notice-date-box">
-            <div class="notice-date-day">01</div>
-            <div class="notice-date-month">July</div>
+        <!-- Notice: Continuous Assessment, Send-ups & Pre-Board Examinations -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="admissions">
+          <div class="notice-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           </div>
           <div class="notice-content">
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
-              <span class="badge badge-primary">Examinations</span>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-primary">Comprehensive Testing System</span>
+              <span class="badge badge-gold">Send-ups & Pre-Boards</span>
             </div>
-            <h3 class="notice-title">Assessment Series</h3>
-            <p class="notice-excerpt">
-            The monthly test series starts one month after classes begin. Students will start on Monday. Roll number slips and
-            seating plans are posted on the admissions office notice board.
+            <h3 class="notice-title">Continuous Assessment, Monthly Tests, Send-up & Pre-Board Examinations</h3>
+            <p class="notice-excerpt" style="margin-bottom: 8px;">
+              Aspire College Mailsi operates a systematic, three-tier academic testing framework structured to guarantee concept mastery and top board positions:
             </p>
-          </div>
-         
-        </div>      
-          
-        <!-- Notice 3 -->
-        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
-          <div class="notice-date-box">
-            <div class="notice-date-day">14</div>
-            <div class="notice-date-month">Aug</div>
-          </div>
-          <div class="notice-content">
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
-              <span class="badge badge-success">Celebration</span>
+            <div style="background: var(--color-bg-alt); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); font-size: 12.5px; line-height: 1.6; color: var(--color-text-dark);">
+              <div style="margin-bottom: 6px;">
+                <strong>1. Monthly Unit Tests & Assessment Series:</strong> Begins one month after academic classes commence, testing students on weekly modules and chapter units to identify and resolve learning gaps early.
+              </div>
+              <div style="margin-bottom: 6px;">
+                <strong>2. Comprehensive Send-up Examinations:</strong> Conducted midway and near course completion covering major syllabus portions. Send-ups evaluate cumulative understanding, paper-presentation skills, and exam time management.
+              </div>
+              <div>
+                <strong>3. Pre-Board Grand Exam Series:</strong> Full-syllabus mock simulations held prior to final board examinations. Papers strictly emulate board difficulty, question styling, and grading rubrics, training students to perform under authentic board exam conditions.
+              </div>
             </div>
-            <h3 class="notice-title">Independence Day Celebrations & Declamation Contest</h3>
-            <p class="notice-excerpt">
-              Aspire College Mailsi hosted a grand Independence Day ceremony with national anthems, speeches by distinguished faculty, and awards given to board position holders of Mailsi.
-            </p>
           </div>
-         
         </div>
 
-        <!-- Notice 5 -->
-        <div class="notice-card notice-card-item reveal delay-200" data-category="exams">
-          <div class="notice-date-box">
-            <div class="notice-date-day">Till</div>
-            <div class="notice-date-month">Dec</div>
+        <!-- Notice: Monthly Parent-Teacher Meetings (PTM) -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events admissions">
+          <div class="notice-icon-box success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           </div>
           <div class="notice-content">
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-success">Parent-Teacher Interaction</span>
+              <span class="badge badge-primary">Student Progress Tracking</span>
+            </div>
+            <h3 class="notice-title">Monthly Parent-Teacher Meetings (PTM)</h3>
+            <p class="notice-excerpt" style="margin-bottom: 8px;">
+              Aspire College Mailsi conducts regular <strong>Monthly Parent-Teacher Meetings (PTM)</strong> to strengthen direct interaction between respected parents and teachers. Active teacher-parent collaboration ensures proactive support for every student's learning journey and character building.
+            </p>
+            <div style="background: var(--color-bg-alt); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); font-size: 12.5px; line-height: 1.6; color: var(--color-text-dark);">
+              <div>• <strong>Direct Teacher-Parent Collaboration:</strong> Parents meet directly with individual subject professors to review monthly test marks, answer sheets, and class participation.</div>
+              <div>• <strong>Attendance & Discipline Monitoring:</strong> Transparent review of student attendance records, punctuality, and overall campus conduct.</div>
+              <div>• <strong>Targeted Mentorship Strategy:</strong> Faculty and parents collaboratively design customized study routines and remedial guidance for subjects needing attention.</div>
+              <div>• <strong>Open Communication:</strong> An encouraging platform where parents share constructive feedback and work hand-in-hand with college leadership for their child's bright future.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notice: BISE Multan Guidelines -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="admissions">
+          <div class="notice-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
               <span class="badge badge-primary">BISE Multan</span>
             </div>
             <h3 class="notice-title">BISE Multan Board Registration Guidelines for Private & Regular Students</h3>
             <p class="notice-excerpt">
-              Detailed circular regarding online board registration for intermediate part 1 students. Students must ensure correct spellings of names as per their NADRA B-Form.
+              Detailed circular regarding online board registration for intermediate Part-1 students. Students must ensure correct spellings of names and parent details as per their official NADRA B-Form records.
             </p>
           </div>
-          <a href="help.html" class="btn btn-outline btn-sm" style="align-self: center;">Guidelines</a>
         </div>
+
+        <!-- Notice: Annual Sports Gala -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-success">Sports & Athletics</span>
+              <span class="badge badge-primary">Occurs in February Month</span>
+            </div>
+            <h3 class="notice-title">Annual Sports Gala Event & Athletics Championship</h3>
+            <p class="notice-excerpt">
+              Aspire College Mailsi organizes its grand Annual Sports Gala during February and March, where students participate in their favorite sports and competitive games including cricket tournaments, football, volleyball, badminton, athletics, table tennis, and tug-of-war. Outstanding student athletes receive trophies, medals, and opportunities to earn sports awards at the national level.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: Results & Position Holders Ceremony -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-gold">Merit Recognition</span>
+              <span class="badge badge-primary">Academic Ceremony</span>
+            </div>
+            <h3 class="notice-title">Annual Results Ceremony & Position Holders Awards</h3>
+            <p class="notice-excerpt">
+              A prestigious ceremonial event where the college awards special distinction trophies, gold medals, merit certificates, and cash scholarships to board position holders, campus toppers, and outstanding high achievers in recognition of their exceptional academic excellence.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: BS Orientation Ceremony -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events admissions">
+          <div class="notice-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-primary">Undergraduate Programs</span>
+              <span class="badge badge-gold">Academic Induction</span>
+            </div>
+            <h3 class="notice-title">BS Degree Programs Orientation Ceremony</h3>
+            <p class="notice-excerpt">
+              A formal induction and orientation session welcoming newly admitted undergraduate students in BS programs. Students are introduced to university-affiliated semester systems, departmental heads, faculty mentors, modern IT & science laboratories, and academic guidelines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: New Inter Batch Welcome -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-success">Welcome Ceremony</span>
+              <span class="badge badge-primary">Intermediate Batches</span>
+            </div>
+            <h3 class="notice-title">New Intermediate Batch Welcome Ceremony</h3>
+            <p class="notice-excerpt">
+              A joyful ceremony welcoming fresh 1st-year students of F.Sc Pre-Medical, F.Sc Pre-Engineering, ICS, I.Com, and F.A to Aspire College Mailsi. Senior students and faculty host interactive sessions, student performances, and inspirational addresses to integrate incoming scholars warmly into the Aspire family.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: Proctor Oath Taking -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-primary">Student Leadership</span>
+              <span class="badge badge-gold">Investiture</span>
+            </div>
+            <h3 class="notice-title">Proctor Oath-Taking Ceremony (Class Proctors Selection)</h3>
+            <p class="notice-excerpt">
+              A dignified investiture ceremony in which outstanding, disciplined students are selected as Class Proctors. Appointed proctors take an oath of duty administered by college leadership, receiving their official proctor badges and responsibilities for maintaining class discipline, ethics, and event management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: Career Counselling Session in Summer Camp -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events admissions">
+          <div class="notice-icon-box gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-gold">Guidance & Mentorship</span>
+              <span class="badge badge-success">Summer Camp Session</span>
+            </div>
+            <h3 class="notice-title">Career Counselling & Guidance Seminar (Summer Camp)</h3>
+            <p class="notice-excerpt">
+              An impactful career counselling session organized during the Summer Camp for new students to provide expert guidance in choosing the right academic disciplines according to their natural aptitude. Renowned motivational speakers and senior counselors deliver inspiring talks to guide students toward successful careers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: Old Batches Farewell Party -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-primary">Student Community</span>
+              <span class="badge badge-gold">Farewell Ceremony</span>
+            </div>
+            <h3 class="notice-title">Outgoing Batches Grand Farewell Party</h3>
+            <p class="notice-excerpt">
+              A heartfelt and memorable farewell gala held in honor of graduating 2nd-year intermediate students. The event features honorary titles, commemorative souvenirs, student reflections, and blessings from respected faculty as students prepare for university life, MDCAT, and ECAT entry examinations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: Winter Bonfire & Qawwali Night -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box danger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-danger">Winter Season Event</span>
+              <span class="badge badge-gold">Cultural Evening</span>
+            </div>
+            <h3 class="notice-title">Winter Bonfire & Live Qawwali Night Event</h3>
+            <p class="notice-excerpt">
+              An enchanting winter season cultural celebration featuring a grand outdoor campus bonfire, steaming hot refreshments, and soulful live traditional Qawwali musical performances. Students and faculty gather under the starlit sky to celebrate rich cultural traditions, camaraderie, and peaceful recreation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Notice: Independence Day Event -->
+        <div class="notice-card notice-card-item reveal delay-100" data-category="events">
+          <div class="notice-icon-box success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+          </div>
+          <div class="notice-content">
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="badge badge-success">National Celebration</span>
+            </div>
+            <h3 class="notice-title">Happy Independence Day Celebrations & Declamation Contest</h3>
+            <p class="notice-excerpt">
+              Aspire College Mailsi marks Independence Day with a patriotic celebration featuring ceremonial national flag-hoisting, national anthems, inter-department declamation speech contests, and milli naghmat performances honoring national freedom, unity, and national heroes.
+            </p>
+          </div>
+        </div>
+
 
       </div>
 
@@ -248,8 +512,9 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-grid">
+        <!-- Col 1: Brand & About -->
         <div class="footer-col-about">
-          <div class="footer-brand">
+          <a href="index.html" class="footer-brand">
             <div class="brand-crest" style="width: 44px; height: 44px;">
               <img src="images/aspire-logo.png" alt="Aspire Group of Colleges Logo">
             </div>
@@ -257,42 +522,96 @@
               <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
               <div class="brand-campus">Mailsi</div>
             </div>
-          </div>
-          <p class="footer-desc">Syphon Road, near Mailsi, Garrison, Mailsi, Punjab, Pakistan. Helpline: 0307-0891119 | Tel: 067-3202151 | WhatsApp: 0303-7376611. <a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); font-weight: 600; text-decoration: underline; white-space: nowrap;">(View on Google Maps)</a></p>
+          </a>
+          <p class="footer-desc">
+            Aspire Group of Colleges Mailsi delivers exceptional academic training, high moral values, and board distinction coaching. Proud part of Pakistan's 3rd ranked college group.
+          </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" class="social-btn social-fb" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://api.whatsapp.com/send?phone=923037376611" class="social-btn social-wa" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+            <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" target="_blank" rel="noopener noreferrer" class="social-btn social-fb" title="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/aspirecollegemailsiofficial/" target="_blank" rel="noopener noreferrer" class="social-btn social-insta" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" class="social-btn social-wa" title="WhatsApp Helpline">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
           </div>
         </div>
+
+        <!-- Col 2: Quick Links -->
         <div>
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-links">
-            <li class="footer-link-item"><a href="index.html">Home</a></li>
-            <li class="footer-link-item"><a href="about.html">About Us</a></li>
-            <li class="footer-link-item"><a href="academics.html">Academics</a></li>
-            <li class="footer-link-item"><a href="admissions.html">Admissions</a></li>
-            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+            <li class="footer-link-item"><a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Home</a></li>
+            <li class="footer-link-item"><a href="about.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>About Campus</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Academics</a></li>
+            <li class="footer-link-item"><a href="admissions.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Admissions</a></li>
+            <li class="footer-link-item"><a href="staff.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Faculty & Staff</a></li>
+            <li class="footer-link-item"><a href="gallery.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Video Gallery</a></li>
+            <li class="footer-link-item"><a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Contact Campus</a></li>
           </ul>
         </div>
+
+        <!-- Col 3: Academic Programs -->
         <div>
-          <h3 class="footer-heading">Programs</h3>
+          <h3 class="footer-heading">Our Programs</h3>
           <ul class="footer-links">
-            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Medical</a></li>
-            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Engineering</a></li>
-            <li class="footer-link-item"><a href="academics.html">ICS (Computer Science)</a></li>
-            <li class="footer-link-item"><a href="academics.html">BS Programs (CS, Eng, Zoo, AI, Math)</a></li>
-            <li class="footer-link-item"><a href="academics.html">Diploma in IT (DIT)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.Sc Pre-Medical</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.Sc Pre-Engineering</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>ICS (Computer Science)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>I.Com (Commerce)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.A Arts & Humanities</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>BS Programs (4-Years)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Diploma in IT (DIT)</a></li>
           </ul>
         </div>
+
+        <!-- Col 4: Campus Location & Contact -->
         <div>
-          <h3 class="footer-heading">Contact & Hours</h3>
-          <p style="color: #cbd5e1; font-size: 13px;">Syphon Road, near Garrison, Mailsi, Punjab<br>Helpline: <strong>0307-0891119</strong><br>Phone: <strong>067-3202151</strong> | WhatsApp: <strong>0303-7376611</strong><br>Email: <strong>principal.mailsi@aspirecolleges.edu.pk</strong><br>Mon-Thu & Sat: 8:00 AM – 2:00 PM<br>Fri: 8:00 AM – 12:00 PM (Sun Closed)</p>
+          <h3 class="footer-heading">Campus Location</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Syphon Road, near Garrison, Mailsi, Punjab, Pakistan</strong>
+                <div><a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-plus-code" title="Open Aspire College Mailsi on Google Maps">📍 Google Maps: Q5JG+QH Mailsi</a></div>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <strong>Admissions Helpline & Tel:</strong><br>
+                <a href="tel:03070891119" style="font-weight: 700; color: var(--color-gold);">0307-0891119</a><br>
+                <span>Tel: </span><a href="tel:0673202151">067-3202151</a> | <span>WhatsApp: </span><a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener" style="color: #25d366;">0303-7376611</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <strong>Principal Office Email:</strong><br>
+                <a href="mailto:principal.mailsi@aspirecolleges.edu.pk">principal.mailsi@aspirecolleges.edu.pk</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <strong>Visiting Hours:</strong><br>
+                Mon - Thu & Sat: 8:00 AM – 2:00 PM<br>
+                Fri: 8:00 AM – 12:00 PM | Sun: Closed
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Bottom Copyright -->
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div class="copyright-text">&copy; <span class="current-year">2026</span> Abdullah Khan Cheena. All Rights Reserved.</div>
+        <div class="copyright-text">
+          &copy; <span class="current-year">2026</span> Aspire College Mailsi. All Rights Reserved.
+        </div>
       </div>
     </div>
   </footer>

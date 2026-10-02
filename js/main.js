@@ -18,22 +18,65 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Sticky Navbar behavior on scroll
+ * Smart Scroll-Aware Navigation Bar:
+ * Automatically hides on scroll down to maximize screen reading space,
+ * Smoothly reveals on scroll up or when approaching top for effortless navigation,
+ * Fully responsive and optimized with requestAnimationFrame across all devices.
  */
 function initNavbar() {
   const header = document.querySelector(".main-header");
   if (!header) return;
 
-  const handleScroll = () => {
-    if (window.scrollY > 40) {
+  const drawer = document.querySelector(".mobile-drawer");
+  let lastScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
+  let ticking = false;
+
+  const updateHeader = () => {
+    const currentScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
+    const scrollDelta = currentScrollY - lastScrollY;
+    const isDrawerOpen = drawer && drawer.classList.contains("is-open");
+
+    // Keep header visible when mobile drawer is open
+    if (isDrawerOpen) {
+      header.classList.remove("header-hidden");
+      lastScrollY = currentScrollY;
+      ticking = false;
+      return;
+    }
+
+    // Header styling: frosted glass and shadow on scroll
+    if (currentScrollY > 40) {
       header.classList.add("header-scrolled");
     } else {
       header.classList.remove("header-scrolled");
     }
+
+    // Scroll Down -> Hide Header (after scrolling past initial threshold)
+    if (scrollDelta > 6 && currentScrollY > 80) {
+      header.classList.add("header-hidden");
+    }
+    // Scroll Up -> Reveal Header
+    else if (scrollDelta < -6 || currentScrollY <= 50) {
+      header.classList.remove("header-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
   };
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  handleScroll();
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  // Initial state check
+  updateHeader();
 }
 
 /**

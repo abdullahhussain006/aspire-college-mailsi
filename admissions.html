@@ -18,25 +18,69 @@
     .page-hero {
       background: linear-gradient(135deg, rgba(24, 5, 7, 0.90) 0%, rgba(180, 10, 35, 0.82) 100%),
                   url('images/campus-building.jpg') center/cover no-repeat;
-      padding: var(--space-3xl) 0;
+      padding: 3.25rem 0;
       color: #ffffff;
       text-align: center;
     }
 
-    .page-hero h1 { color: #ffffff; margin-bottom: var(--space-sm); }
+    .page-hero h1 {
+      color: #ffffff;
+      font-size: clamp(1.85rem, 3.5vw, 2.45rem);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 991px) {
+      .page-hero {
+        padding: 2.5rem 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.5rem, 3.2vw, 1.95rem);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 1.75rem 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.35rem, 4.8vw, 1.65rem);
+        margin-bottom: 6px;
+      }
+      .breadcrumb {
+        font-size: 10.5px;
+      }
+    }
 
     .breadcrumb {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      font-size: var(--font-xs);
+      gap: 6px;
+      font-size: 11.5px;
       color: var(--color-gold);
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 1px;
+      margin-bottom: 6px;
     }
 
     .breadcrumb a { color: #cbd5e1; }
+
+    /* Admission Form Container */
+    .admission-form-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--color-bg-card);
+      padding: 28px 30px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+    }
+
+    @media (max-width: 768px) {
+      .admission-form-wrapper {
+        padding: 16px 14px;
+      }
+    }
 
     /* Admission Slip Modal */
     .slip-modal {
@@ -62,37 +106,37 @@
     .slip-card {
       background: var(--color-bg-card);
       border-radius: var(--radius-lg);
-      max-width: 620px;
+      max-width: 560px;
       width: 100%;
       overflow: hidden;
-      box-shadow: var(--shadow-2xl);
+      box-shadow: var(--shadow-xl);
       animation: modalScale 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .slip-header {
       background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
       color: #ffffff;
-      padding: var(--space-lg);
+      padding: 16px 20px;
       text-align: center;
     }
 
     .slip-body {
-      padding: var(--space-2xl);
+      padding: 20px 24px;
     }
 
     .slip-table {
       width: 100%;
-      margin: var(--space-lg) 0;
-      font-size: var(--font-sm);
+      margin: 12px 0;
+      font-size: 13.5px;
     }
 
     .slip-table td {
-      padding: 8px 12px;
+      padding: 7px 12px;
       border-bottom: 1px solid var(--color-border);
     }
 
     .field-error {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--color-danger);
       margin-top: 4px;
       display: block;
@@ -109,9 +153,8 @@
           <img src="images/aspire-logo.png" alt="Aspire Logo">
         </div>
         <div class="brand-text">
-          <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
+          <div class="brand-name">ASPIRE <span>COLLEGE</span></div>
           <div class="brand-campus">Mailsi</div>
-          <div class="brand-tagline">Excellence in South Punjab</div>
         </div>
       </a>
 
@@ -166,6 +209,124 @@
       <p class="section-description" style="color: #cbd5e1; max-width: 680px; margin: 0 auto;" class="reveal delay-100">
         Secure your seat at Aspire College. Discover our transparent fee structure, calculate your scholarship entitlement, and submit your registration online.
       </p>
+    </div>
+  </section>
+
+  <!-- Admissions Open: Programs Offered Showcase -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold">Admissions 2026 Open</span>
+        <h2 class="section-title">Explore Academic Programs & <span class="highlight">Disciplines</span></h2>
+        <p class="section-description">Select your academic track to learn more about eligibility, subjects, and start your online application.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Program 1 -->
+        <div class="program-card reveal delay-100">
+          <img src="images/pre-medical.jpg" alt="F.Sc Pre-Medical Admissions Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Intermediate</span>
+            <h3 class="program-title">F.Sc Pre-Medical</h3>
+            <div class="program-meta"><span>⏱ 2 Years</span><span>📍 BISE Multan</span></div>
+            <p class="card-text">Coaching in Biology, Chemistry, and Physics with dedicated MDCAT foundation classes for future medical professionals.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-primary">Eligibility: 80%+</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="F.Sc Pre-Medical">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="program-card reveal delay-200">
+          <img src="images/pre-engineering.jpg" alt="F.Sc Pre-Engineering Admissions Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Intermediate</span>
+            <h3 class="program-title">F.Sc Pre-Engineering</h3>
+            <div class="program-meta"><span>⏱ 2 Years</span><span>📍 BISE Multan</span></div>
+            <p class="card-text">Advanced training in Mathematics, Physics, and Chemistry preparing candidates for ECAT, UET, and top engineering institutions.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-primary">Eligibility: 70%+</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="F.Sc Pre-Engineering">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="program-card reveal delay-300">
+          <img src="images/intermediate-computer-science.jpg" alt="ICS Computer Science Admissions Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Intermediate</span>
+            <h3 class="program-title">ICS (Computer Science)</h3>
+            <div class="program-meta"><span>⏱ 2 Years</span><span>📍 BISE Multan</span></div>
+            <p class="card-text">Programming, computer architecture, algorithms, and mathematics. Foundation for Software Engineering and Artificial Intelligence.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-primary">Eligibility: 60%+</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="ICS (Physics, Math, Computer)">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 4 -->
+        <div class="program-card reveal delay-100">
+          <img src="images/commerce.jpg" alt="I.Com Commerce Admissions Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Commerce</span>
+            <h3 class="program-title">I.Com (Commerce)</h3>
+            <div class="program-meta"><span>⏱ 2 Years</span><span>📍 BISE Multan</span></div>
+            <p class="card-text">Accounting, Banking, Commerce, and Economics. Ideal starting route for Chartered Accountants (CA), ACCA, and finance.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-primary">Eligibility: 50%+</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="I.Com (Commerce)">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 5 -->
+        <div class="program-card reveal delay-200">
+          <img src="images/fa.jpg" alt="F.A Faculty of Arts Admissions Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Intermediate</span>
+            <h3 class="program-title">Faculty of Arts (F.A)</h3>
+            <div class="program-meta"><span>⏱ 2 Years</span><span>📍 BISE Multan</span></div>
+            <p class="card-text">Flexible subject combinations including Civics, Islamic Studies, Economics, and Education for law and civil services.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-primary">Eligibility: 50%+</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="F.A (Humanities / Gen Science)">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 6 -->
+        <div class="program-card reveal delay-300">
+          <img src="images/bs-programs-admissions.jpg" alt="BS Programs Admissions Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Undergraduate</span>
+            <h3 class="program-title">BS 4-Year Degree Programs</h3>
+            <div class="program-meta"><span>⏱ 4 Years</span><span>📍 University Affiliated</span></div>
+            <p class="card-text">Offering BS Computer Science, BS English, BS Zoology, BS AI, and BS Mathematics. Admissions open for current session.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-gold">Admissions Open</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="BS Computer Science">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 7 -->
+        <div class="program-card reveal delay-100">
+          <img src="images/DIT.jpg" alt="DIT Diploma in Information Technology Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-tag">Certification</span>
+            <h3 class="program-title">Diploma in IT (DIT)</h3>
+            <div class="program-meta"><span>⏱ 2 Years (4 Semesters)</span><span>📍 IT Lab Practical</span></div>
+            <p class="card-text">Comprehensive hands-on IT training, computer operations, web development, and graphic design for rapid employment.</p>
+            <div class="program-card-footer">
+              <span class="badge badge-gold">Admissions Open</span>
+              <a href="#applicationFormSection" class="btn btn-outline btn-sm apply-program-btn" data-program="Diploma in Information Technology (DIT)">Apply Now &darr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -285,6 +446,25 @@
           <p class="card-text" style="font-size: 13px;">Deposit fee with approved scholarship concession and collect your student ID & uniform slip.</p>
         </div>
       </div>
+
+      <!-- Admissions Desk Photo Card -->
+      <div class="card reveal delay-100" style="margin-top: var(--space-2xl); padding: 0; overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-md);">
+        <div class="grid grid-2 items-center" style="gap: 0;">
+          <div style="padding: var(--space-2xl);">
+            <span class="section-tag gold">Campus Admissions Desk</span>
+            <h3 style="font-size: 1.5rem; margin-top: 8px; margin-bottom: var(--space-sm); color: var(--color-primary-dark);">Visit Us on Syphon Road Mailsi</h3>
+            <p class="card-text" style="margin-bottom: var(--space-md);">Our dedicated Admissions and Student Affairs Counselors are available at the front desk Monday through Saturday (8:00 AM – 2:00 PM) to assist you with stream selection, document verification, and fee concession approvals.</p>
+            <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+              <a href="tel:03070891119" class="btn btn-primary btn-sm">📞 Call Helpline: 0307-0891119</a>
+              <a href="https://api.whatsapp.com/send?phone=923037376611&text=Hello%20Aspire%20Mailsi%20I%20want%20admission%20information" target="_blank" rel="noopener" class="btn btn-outline btn-sm">💬 WhatsApp: 0303-7376611</a>
+            </div>
+          </div>
+          <div>
+            <img src="images/admissions-desk.jpg" alt="Aspire College Mailsi Admissions and Information Desk" style="width: 100%; height: 100%; min-height: 280px; max-height: 340px; object-fit: cover; object-position: center;" loading="lazy">
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -297,7 +477,7 @@
         <p class="section-description">Fill out this registration form to reserve your seat in the upcoming session. Our admissions officer will call you for verification.</p>
       </div>
 
-      <div style="max-width: 820px; margin: 0 auto; background: var(--color-bg-card); padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); border: 1px solid var(--color-border);" class="reveal">
+      <div class="admission-form-wrapper reveal">
         
         <!-- Step Progress Indicator -->
         <div class="step-indicator">
@@ -309,17 +489,17 @@
         <form id="admissionForm" novalidate>
           <!-- STEP 1: Personal Details -->
           <div class="form-step active" data-step="0">
-            <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark); font-size: 1.3rem;">Step 1: Student & Guardian Information</h3>
+            <h3 style="margin-bottom: 12px; color: var(--color-primary-dark); font-size: 1.05rem;">Step 1: Student & Guardian Information</h3>
             
             <div class="grid grid-2">
               <div class="form-group">
                 <label for="studentName" class="form-label">Full Name of Student *</label>
-                <input type="text" id="studentName" class="form-control" placeholder="e.g. Muhammad Ahmad" required>
+                <input type="text" id="studentName" class="form-control" placeholder="e.g. M Ali" required>
                 <span class="field-error"></span>
               </div>
               <div class="form-group">
                 <label for="fatherName" class="form-label">Father / Guardian Name *</label>
-                <input type="text" id="fatherName" class="form-control" placeholder="e.g. Tariq Mehmood" required>
+                <input type="text" id="fatherName" class="form-control" placeholder="e.g. M Khalid" required>
                 <span class="field-error"></span>
               </div>
             </div>
@@ -343,14 +523,14 @@
               <span class="field-error"></span>
             </div>
 
-            <div style="display: flex; justify-content: flex-end; margin-top: var(--space-xl);">
+            <div style="display: flex; justify-content: flex-end; margin-top: var(--space-md);">
               <button type="button" class="btn btn-primary btn-step-next">Next: Academic Record &rarr;</button>
             </div>
           </div>
 
           <!-- STEP 2: Academic Record -->
           <div class="form-step" data-step="1">
-            <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark); font-size: 1.3rem;">Step 2: Previous Academic Record</h3>
+            <h3 style="margin-bottom: 12px; color: var(--color-primary-dark); font-size: 1.05rem;">Step 2: Previous Academic Record</h3>
 
             <div class="grid grid-2">
               <div class="form-group">
@@ -385,7 +565,7 @@
               </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; margin-top: var(--space-xl);">
+            <div style="display: flex; justify-content: space-between; margin-top: var(--space-md);">
               <button type="button" class="btn btn-outline btn-step-prev">&larr; Back</button>
               <button type="button" class="btn btn-primary btn-step-next">Next: Program Selection &rarr;</button>
             </div>
@@ -393,7 +573,7 @@
 
           <!-- STEP 3: Program Selection & Review -->
           <div class="form-step" data-step="2">
-            <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark); font-size: 1.3rem;">Step 3: Program Selection & Submit</h3>
+            <h3 style="margin-bottom: 12px; color: var(--color-primary-dark); font-size: 1.05rem;">Step 3: Program Selection & Submit</h3>
 
             <div class="form-group">
               <label for="targetProgram" class="form-label">Desired Program of Study *</label>
@@ -433,7 +613,7 @@
               </label>
             </div>
 
-            <div style="display: flex; justify-content: space-between; margin-top: var(--space-xl);">
+            <div style="display: flex; justify-content: space-between; margin-top: var(--space-md);">
               <button type="button" class="btn btn-outline btn-step-prev">&larr; Back</button>
               <button type="submit" class="btn btn-gold btn-lg">Submit Application Now &rarr;</button>
             </div>
@@ -502,8 +682,9 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-grid">
+        <!-- Col 1: Brand & About -->
         <div class="footer-col-about">
-          <div class="footer-brand">
+          <a href="index.html" class="footer-brand">
             <div class="brand-crest" style="width: 44px; height: 44px;">
               <img src="images/aspire-logo.png" alt="Aspire Group of Colleges Logo">
             </div>
@@ -511,42 +692,96 @@
               <div class="brand-name">ASPIRE <span>COLLEGES</span></div>
               <div class="brand-campus">Mailsi</div>
             </div>
-          </div>
-          <p class="footer-desc">Syphon Road, near Mailsi, Garrison, Mailsi, Punjab, Pakistan. Helpline: 0307-0891119 | Tel: 067-3202151 | WhatsApp: 0303-7376611. <a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); font-weight: 600; text-decoration: underline; white-space: nowrap;">(View on Google Maps)</a></p>
+          </a>
+          <p class="footer-desc">
+            Aspire Group of Colleges Mailsi delivers exceptional academic training, high moral values, and board distinction coaching. Proud part of Pakistan's 3rd ranked college group.
+          </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" class="social-btn social-fb" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://api.whatsapp.com/send?phone=923037376611" class="social-btn social-wa" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+            <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" target="_blank" rel="noopener noreferrer" class="social-btn social-fb" title="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/aspirecollegemailsiofficial/" target="_blank" rel="noopener noreferrer" class="social-btn social-insta" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" class="social-btn social-wa" title="WhatsApp Helpline">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
           </div>
         </div>
+
+        <!-- Col 2: Quick Links -->
         <div>
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-links">
-            <li class="footer-link-item"><a href="index.html">Home</a></li>
-            <li class="footer-link-item"><a href="about.html">About Us</a></li>
-            <li class="footer-link-item"><a href="academics.html">Academics</a></li>
-            <li class="footer-link-item"><a href="admissions.html">Admissions</a></li>
-            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+            <li class="footer-link-item"><a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Home</a></li>
+            <li class="footer-link-item"><a href="about.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>About Campus</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Academics</a></li>
+            <li class="footer-link-item"><a href="admissions.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Admissions</a></li>
+            <li class="footer-link-item"><a href="staff.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Faculty & Staff</a></li>
+            <li class="footer-link-item"><a href="gallery.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Video Gallery</a></li>
+            <li class="footer-link-item"><a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Contact Campus</a></li>
           </ul>
         </div>
+
+        <!-- Col 3: Academic Programs -->
         <div>
-          <h3 class="footer-heading">Programs</h3>
+          <h3 class="footer-heading">Our Programs</h3>
           <ul class="footer-links">
-            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Medical</a></li>
-            <li class="footer-link-item"><a href="academics.html">F.Sc Pre-Engineering</a></li>
-            <li class="footer-link-item"><a href="academics.html">ICS (Computer Science)</a></li>
-            <li class="footer-link-item"><a href="academics.html">BS Programs (CS, Eng, Zoo, AI, Math)</a></li>
-            <li class="footer-link-item"><a href="academics.html">Diploma in IT (DIT)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.Sc Pre-Medical</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.Sc Pre-Engineering</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>ICS (Computer Science)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>I.Com (Commerce)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>F.A Arts & Humanities</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>BS Programs (4-Years)</a></li>
+            <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Diploma in IT (DIT)</a></li>
           </ul>
         </div>
+
+        <!-- Col 4: Campus Location & Contact -->
         <div>
-          <h3 class="footer-heading">Contact & Hours</h3>
-          <p style="color: #cbd5e1; font-size: 13px;">Syphon Road, near Garrison, Mailsi, Punjab<br>Helpline: <strong>0307-0891119</strong><br>Phone: <strong>067-3202151</strong> | WhatsApp: <strong>0303-7376611</strong><br>Email: <strong>principal.mailsi@aspirecolleges.edu.pk</strong><br>Mon-Thu & Sat: 8:00 AM – 2:00 PM<br>Fri: 8:00 AM – 12:00 PM (Sun Closed)</p>
+          <h3 class="footer-heading">Campus Location</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Syphon Road, near Garrison, Mailsi, Punjab, Pakistan</strong>
+                <div><a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-plus-code" title="Open Aspire College Mailsi on Google Maps">📍 Google Maps: Q5JG+QH Mailsi</a></div>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <strong>Admissions Helpline & Tel:</strong><br>
+                <a href="tel:03070891119" style="font-weight: 700; color: var(--color-gold);">0307-0891119</a><br>
+                <span>Tel: </span><a href="tel:0673202151">067-3202151</a> | <span>WhatsApp: </span><a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener" style="color: #25d366;">0303-7376611</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <strong>Principal Office Email:</strong><br>
+                <a href="mailto:principal.mailsi@aspirecolleges.edu.pk">principal.mailsi@aspirecolleges.edu.pk</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <strong>Visiting Hours:</strong><br>
+                Mon - Thu & Sat: 8:00 AM – 2:00 PM<br>
+                Fri: 8:00 AM – 12:00 PM | Sun: Closed
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Bottom Copyright -->
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div class="copyright-text">&copy; <span class="current-year">2026</span> Abdullah Khan Cheena. All Rights Reserved.</div>
+        <div class="copyright-text">
+          &copy; <span class="current-year">2026</span> Aspire College Mailsi. All Rights Reserved.
+        </div>
       </div>
     </div>
   </footer>

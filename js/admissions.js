@@ -73,6 +73,17 @@ function initMultiStepForm() {
     });
   });
 
+  // Quick Apply Program Buttons
+  document.querySelectorAll(".apply-program-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selectedProg = btn.getAttribute("data-program");
+      const targetSelect = document.getElementById("targetProgram");
+      if (targetSelect && selectedProg) {
+        targetSelect.value = selectedProg;
+      }
+    });
+  });
+
   // Submit Handler
   form.addEventListener("submit", (e) => {
     e.preventDefault();

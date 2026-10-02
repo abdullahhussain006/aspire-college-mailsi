@@ -29,7 +29,8 @@ function initNoticeBoard() {
       const cardCategory = card.getAttribute("data-category") || "";
       const cardText = card.textContent.toLowerCase();
 
-      const matchesCategory = (currentCategory === "all" || cardCategory === currentCategory);
+      const cardCategories = cardCategory.split(/\s+/);
+      const matchesCategory = (currentCategory === "all" || cardCategories.includes(currentCategory));
       const matchesSearch = cardText.includes(currentSearchQuery);
 
       if (matchesCategory && matchesSearch) {
