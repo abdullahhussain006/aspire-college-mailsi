@@ -44,7 +44,7 @@ function initScrollReveal() {
  * Animated Stat Numbers Counter
  */
 function initStatCounters() {
-  const counterElements = document.querySelectorAll(".stat-number[data-target]");
+  const counterElements = document.querySelectorAll(".stat-counter[data-target], .stat-number[data-target]");
   if (counterElements.length === 0) return;
 
   const runCounter = (el) => {
