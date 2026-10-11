@@ -120,9 +120,17 @@ ul, ol {
   position: relative;
 }
 
+/* Consecutive sections: tighter padding-top to eliminate excessive gaps between sections */
+.section + .section {
+  padding-top: var(--space-lg);
+}
+
 @media (max-width: 768px) {
   .section {
     padding: var(--space-2xl) 0;
+  }
+  .section + .section {
+    padding-top: var(--space-md);
   }
 }
 
@@ -147,7 +155,7 @@ ul, ol {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto var(--space-xl);
+  margin: 0 auto var(--space-lg);
 }
 
 .section-header.text-left {

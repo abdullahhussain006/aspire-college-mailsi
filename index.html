@@ -96,10 +96,11 @@
     }
 
     .hero-title .gold-gradient {
-      background: linear-gradient(135deg, #ffffff 0%, #ffd166 25%, #f59e0b 60%, #fbbf24 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 10px rgba(245, 158, 11, 0.35));
+      color: #fbbf24;
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: #fbbf24;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 0 24px rgba(251, 191, 36, 0.35);
       display: inline-block;
     }
 
@@ -113,22 +114,16 @@
     }
 
     .hero-lead {
-      color: #fbbf24;
+      color: #fde047;
       font-weight: 700;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
-    /* Action Buttons & Helpline */
-    .hero-actions-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
+    /* Action Buttons */
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
       align-items: center;
     }
 
@@ -178,79 +173,9 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
 
-    .hero-helpline-strip {
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: var(--radius-full);
-      padding: 7px 16px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-    }
 
-    .helpline-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #86efac;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
 
-    .status-pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-      display: inline-block;
-      animation: statusPulse 2s infinite ease-in-out;
-    }
 
-    @keyframes statusPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(0.85); }
-    }
-
-    .helpline-links {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12.5px;
-    }
-
-    .helpline-item {
-      color: #f8fafc;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: 600;
-      transition: color var(--transition-fast);
-    }
-
-    .helpline-item:hover {
-      color: #fbbf24;
-    }
-
-    .helpline-item.helpline-whatsapp {
-      color: #4ade80;
-    }
-
-    .helpline-item.helpline-whatsapp:hover {
-      color: #86efac;
-    }
-
-    .helpline-sep {
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 12px;
-    }
 
 
 
@@ -295,10 +220,7 @@
         line-height: 1.55;
         margin-bottom: 16px;
       }
-      .hero-actions-wrapper {
-        width: 100%;
-        gap: 10px;
-      }
+
       .hero-actions {
         width: 100%;
         flex-direction: row;
@@ -314,20 +236,7 @@
         text-align: center;
         white-space: nowrap;
       }
-      .hero-helpline-strip {
-        width: 100%;
-        justify-content: space-between;
-        padding: 7px 12px;
-        border-radius: 10px;
-        gap: 8px;
-      }
-      .helpline-status {
-        font-size: 10.5px;
-      }
-      .helpline-links {
-        font-size: 11.5px;
-        gap: 6px;
-      }
+
 
       .message-box {
         padding: 16px 18px;
@@ -432,10 +341,10 @@
         <a href="about.html" class="nav-link">About Us</a>
         <a href="academics.html" class="nav-link">Academics</a>
         <a href="admissions.html" class="nav-link">Admissions</a>
-        <a href="staff.html" class="nav-link">Staff & Faculty</a>
+        <a href="staff.html" class="nav-link">Faculty</a>
         <a href="gallery.html" class="nav-link">Gallery</a>
         <a href="updates.html" class="nav-link">Updates</a>
-        <a href="help.html" class="nav-link">Help & FAQ</a>
+        <a href="help.html" class="nav-link">FAQs</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
@@ -526,35 +435,14 @@
             <strong class="hero-lead">Your Future Starts Here!</strong>
             Empowering Mailsi’s youth with premier intermediate & degree education, expert faculty mentoring, modern science labs, and proven board distinction results.
           </p>
-          <div class="hero-actions-wrapper">
-            <div class="hero-actions">
-              <a href="admissions.html" class="btn btn-hero-primary">
-                <span>Apply for Admission</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="academics.html" class="btn btn-hero-secondary">
-                <span>Explore Programs</span>
-              </a>
-            </div>
-
-            <!-- Direct Admissions Helpline Strip -->
-            <div class="hero-helpline-strip">
-              <div class="helpline-status">
-                <span class="status-pulse"></span>
-                <span>Admissions Contact</span>
-              </div>
-              <div class="helpline-links">
-                <a href="tel:03070891119" class="helpline-item" title="Call Admissions Office">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <span>0307-0891119</span>
-                </a>
-                <span class="helpline-sep">&bull;</span>
-                <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" class="helpline-item helpline-whatsapp" title="Chat on WhatsApp">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.52 1.09 2.52.73 2.98.69.46-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
-                  <span>WhatsApp Chat</span>
-                </a>
-              </div>
-            </div>
+          <div class="hero-actions">
+            <a href="admissions.html" class="btn btn-hero-primary">
+              <span>Apply for Admission</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="academics.html" class="btn btn-hero-secondary">
+              <span>Explore Programs</span>
+            </a>
           </div>
         </div>
       </div>
@@ -616,17 +504,17 @@
       <div class="section-header reveal">
         <span class="section-tag">Why Choose Us</span>
         <h2 class="section-title">The Premier Institution for <span class="highlight">Higher Secondary Education</span> in Mailsi</h2>
-        <p class="section-description">Aspire College Mailsi combines cutting-edge curriculum coverage, regular testing sessions, moral grooming, and board distinction coaching on Syphon Road, Mailsi.</p>
+        <p class="section-description">Aspire College Mailsi is committed to academic excellence through a modern, comprehensive curriculum, regular assessment sessions, character building, and focused coaching to help students achieve outstanding board examination results. Conveniently located on Syphon Road, Mailsi, we strive to nurture confident, disciplined, and high-achieving individuals.</p>
       </div>
 
-      <div class="grid grid-3">
+      <div class="grid grid-3 feature-cards-grid">
         <!-- Card 1 -->
         <div class="card reveal delay-100">
           <div class="card-icon-wrapper">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
           </div>
           <h3 class="card-title">Academic Excellence</h3>
-          <p class="card-text">Aspire covers syllabus systematically with structured daily, monthly assessments, comprehensive send-up exams, and targeted test sessions to ensure 100% board preparedness.</p>
+          <p class="card-text">Aspire College follows a systematic syllabus plan with structured learning phases. We conduct daily and monthly assessments, comprehensive send-up examinations, and targeted test sessions to ensure students are fully prepared for their board examinations.</p>
           <a href="academics.html" class="btn btn-outline btn-sm">Learn More &rarr;</a>
         </div>
 
@@ -636,7 +524,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           </div>
           <h3 class="card-title">Seasoned Faculty</h3>
-          <p class="card-text">Our distinguished subject specialists and lecturers bring years of proven pedagogical experience in producing top BISE Multan position holders.</p>
+          <p class="card-text">Our experienced subject specialists and dedicated lecturers provide quality education and expert guidance, helping students achieve outstanding results in examinations and ensures every student receives the support and confidence needed to excel academically.</p>
           <a href="staff.html" class="btn btn-outline btn-sm">Meet Our Staff &rarr;</a>
         </div>
 
@@ -646,8 +534,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
           </div>
           <h3 class="card-title">Continuous Testing Sessions</h3>
-          <p class="card-text">Early starter batches and continuous 4-month academic prep bridge the transition from Matriculation to Intermediate with zero wasted study time.</p>
-          <a href="admissions.html" class="btn btn-outline btn-sm">Admissions Guide &rarr;</a>
+          <p class="card-text">Our comprehensive testing system begins in the very first month of the new batch and continues throughout the academic year in multiple phases. Regular assessments help students strengthen their concepts, track their progress, and stay fully prepared for board examinations.</p>
+          <a href="academics.html" class="btn btn-outline btn-sm">Academic Calender &rarr;</a>
         </div>
 
         <!-- Card 4 -->
@@ -676,8 +564,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
           </div>
           <h3 class="card-title">Safe Transport Service</h3>
-          <p class="card-text">Dedicated, monitored college vans and buses covering Syphon Road, Garrison, Mailsi City, Tibba Sultan Pur, Mitroo, and adjoining rural catchments.</p>
-          <a href="contact.html" class="btn btn-outline btn-sm">Transport Routes &rarr;</a>
+          <p class="card-text">Dedicated, monitored college vans and buses covering Mailsi City, and adjoining rural catchments.</p>
+          <a href="help.html" class="btn btn-outline btn-sm">Transport Routes &rarr;</a>
         </div>
       </div>
     </div>
@@ -686,7 +574,7 @@
    <!-- Campus Leadership: Director & Principal Messages -->
   <section class="section">
     <div class="container">
-      <div class="section-header reveal text-center" style="margin-bottom: var(--space-3xl);">
+      <div class="section-header reveal text-center">
         <span class="section-tag">Campus Leadership</span>
         <h2 class="section-title">Guiding Visions for <span class="highlight">Academic Excellence</span></h2>
         <p class="section-description">Dedicated leadership shaping the scholastic future, digital skills, and moral character of Mailsi's youth.</p>
@@ -695,7 +583,7 @@
       <!-- Director Profile: Umar Khan Saggu -->
       <div class="grid grid-2 items-center" style="margin-bottom: var(--space-xl); gap: var(--space-xl);">
         <div class="reveal-left">
-          <img src="images/director.jpg" alt="Umar Khan Saggu Director Aspire Group of Colleges Mailsi" style="width: 100%; max-height: 280px; object-fit: cover; object-position: center 25%; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 2px solid var(--color-border);" loading="lazy">
+          <img src="images/director.jpg" alt="Umar Khan Saggu Director Aspire Group of Colleges Mailsi" style="width: 100%; max-height: 385px; object-fit: cover; object-position: center 25%; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 2px solid var(--color-border);" loading="lazy">
           <div style="background: var(--color-navy); color: #ffffff; padding: 12px 18px; border-radius: 0 0 var(--radius-md) var(--radius-md); margin-top: -6px;">
             <div style="font-weight: 700; color: #ffffff; font-size: 1.08rem;">Umar Khan Saggu</div>
             <div style="font-size: 13px; color: #cbd5e1;">Director, Aspire Group of Colleges Mailsi</div>
@@ -722,7 +610,7 @@
       <div class="grid grid-2 items-center" style="gap: var(--space-xl);">
         <div class="reveal-left">
           <div class="message-box" style="border-left: 5px solid var(--color-primary); padding: 24px 26px;">
-            <span class="section-tag gold" style="font-size: 11.5px; margin-bottom: 4px;">Academic Leadership</span>
+            <span class="section-tag gold" style="font-size: 11.5px; margin-bottom: 4px;">Campus Principal</span>
             <h3 class="card-title" style="font-size: 1.3rem; margin-top: 4px; margin-bottom: 8px;">Message from Campus Principal</h3>
             <p class="card-text" style="font-size: 0.98rem; line-height: 1.62; margin-top: 6px; margin-bottom: 8px;">
               "At Aspire Group of Colleges Mailsi, we believe that every student in our city possesses extraordinary potential. Our campus was founded to provide the daughters and sons of Mailsi an educational ecosystem that matches the best metropolitan institutions."
@@ -734,22 +622,16 @@
               — Ch Shahid Naveed, Principal
             </div>
             <div style="margin-top: 6px; font-size: 13px;">
-              <a href="mailto:principal.mailsi@aspirecolleges.edu.pk" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">
-                ✉ principal.mailsi@aspirecolleges.edu.pk
-              </a>
             </div>
           </div>
         </div>
 
         <div class="reveal-right">
-          <img src="images/principal.jpg" alt="Ch Shahid Naveed Principal Aspire College Mailsi" style="width: 100%; max-height: 280px; object-fit: cover; object-position: center top; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 2px solid var(--color-border);">
+          <img src="images/principal.jpg" alt="Ch Shahid Naveed Principal Aspire College Mailsi" style="width: 100%; max-height: 323px; object-fit: cover; object-position: center top; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 2px solid var(--color-border);">
           <div style="background: var(--color-navy); color: #ffffff; padding: 12px 18px; border-radius: 0 0 var(--radius-md) var(--radius-md); margin-top: -6px;">
             <div style="font-weight: 700; color: #ffffff; font-size: 1.08rem;">Ch Shahid Naveed</div>
             <div style="font-size: 13px; color: #cbd5e1;">Principal, Aspire Group of Colleges Mailsi</div>
             <div style="margin-top: 3px; font-size: 13px;">
-              <a href="mailto:principal.mailsi@aspirecolleges.edu.pk" style="color: #93c5fd; text-decoration: underline;">
-                ✉ principal.mailsi@aspirecolleges.edu.pk
-              </a>
             </div>
           </div>
         </div>
@@ -776,9 +658,8 @@
             <div class="program-meta">
               <span>⏱ 2 Years</span>
             </div>
-            <p class="card-text">Specialized coaching in Biology, Chemistry, and Physics with dedicated MDCAT preparation and rigorous lab work for aspiring doctors.</p>
+            <p class="card-text">Comprehensive education in Biology, Chemistry, and Physics, supported by practical laboratory work and focused MDCAT preparation to help aspiring medical students successfully achieve their goals.</p>
             <div class="program-card-footer">
-              <span class="badge badge-primary">Eligibility: 80%+</span>
               <a href="academics.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
@@ -793,9 +674,8 @@
             <div class="program-meta">
               <span>⏱ 2 Years</span>
             </div>
-            <p class="card-text">Rigorous training in Mathematics, Physics, and Chemistry preparing candidates for ECAT, UET, NUST, and leading engineering institutions.</p>
+            <p class="card-text">Develop strong mathematical, scientific, and problem-solving skills through focused learning in Mathematics, Physics, and Chemistry, preparing students for advanced studies and successful careers in engineering and technology</p>
             <div class="program-card-footer">
-              <span class="badge badge-primary">Eligibility: 70%+</span>
               <a href="academics.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
@@ -810,9 +690,8 @@
             <div class="program-meta">
               <span>⏱ 2 Years</span>
             </div>
-            <p class="card-text">Learn programming, computer hardware, algorithms, and applied mathematics. The primary foundation for Software Engineering and Artificial Intelligence.</p>
+            <p class="card-text">Build a strong foundation in Computer Science, Mathematics, and programming while developing problem-solving and analytical skills for future studies in Software Engineering, Artificial Intelligence, and Information Technology.</p>
             <div class="program-card-footer">
-              <span class="badge badge-primary">Eligibility: 60%+</span>
               <a href="academics.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
@@ -822,14 +701,13 @@
         <div class="program-card reveal delay-100">
           <img src="images/commerce.jpg" alt="I.Com Commerce" class="program-card-img" style="object-position: top center;" loading="lazy" decoding="async">
           <div class="program-card-body">
-            <span class="program-tag">Commerce</span>
+            <span class="program-tag">Intermediate</span>
             <h3 class="program-title">I.Com (Intermediate in Commerce)</h3>
             <div class="program-meta">
               <span>⏱ 2 Years</span>
             </div>
-            <p class="card-text">Accounting, Banking, Principles of Commerce, and Economics. Tailored for future Chartered Accountants (CA), ACCA, and banking executives.</p>
+            <p class="card-text">Gain essential knowledge of Accounting, Commerce, and Economics while developing financial literacy and business skills, preparing students for higher studies and careers in banking, management, and finance.</p>
             <div class="program-card-footer">
-              <span class="badge badge-primary">Eligibility: 50%+</span>
               <a href="academics.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
@@ -844,9 +722,8 @@
             <div class="program-meta">
               <span>⏱ 2 Years</span>
             </div>
-            <p class="card-text">Flexible subject combinations including Civics, Islamic Studies, Economics, Statistics, and Education for law, civil services (CSS), and literature.</p>
+            <p class="card-text">Explore Humanities and General Science through flexible subject combinations, developing critical thinking and communication skills for higher studies and future careers in law, education, and public service.</p>
             <div class="program-card-footer">
-              <span class="badge badge-primary">Eligibility: 50%+</span>
               <a href="academics.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
@@ -857,14 +734,12 @@
           <img src="images/bs-programs-admissions.jpg" alt="BS Programs Admissions Open Aspire College Mailsi" class="program-card-img" style="object-position: top center;" loading="lazy" decoding="async">
           <div class="program-card-body">
             <span class="program-tag">Graduation</span>
-            <h3 class="program-title">BS Programs (Admissions Open)</h3>
+            <h3 class="program-title">BS Programs</h3>
             <div class="program-meta">
               <span>⏱ 4 Years</span>
-              <span>📍 University Affiliated</span>
             </div>
-            <p class="card-text">Offering BS Computer Science, BS English, BS Zoology, BS Artificial Intelligence, and BS Mathematics. Admissions open now! Helpline: 0303-7376611 / 0307-0574260.</p>
+            <p class="card-text">Explore diverse fields of Computer Science, English, Zoology, Artificial Intelligence, and Mathematics, building strong knowledge and practical skills for advanced studies and successful future professional careers.</p>
             <div class="program-card-footer">
-              <span class="badge badge-gold">Admissions Open</span>
               <a href="academics.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
@@ -878,24 +753,20 @@
             <h3 class="program-title">Diploma in Information Tech (DIT)</h3>
             <div class="program-meta">
               <span>⏱ 2 Years (4 Semesters)</span>
-              <span>📍 Hands-on Labs</span>
             </div>
-            <p class="card-text">Comprehensive practical IT skills, computer fundamentals, office automation, web development, and graphic design for today's digital economy.</p>
+            <p class="card-text">Develop practical computer skills, IT knowledge, and digital proficiency, preparing students for further learning and future careers in technology and information systems.</p>
             <div class="program-card-footer">
-              <span class="badge badge-gold">Admissions Open</span>
               <a href="admissions.html" class="btn btn-outline btn-sm">Details</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="text-center" style="margin-top: var(--space-2xl);">
+      <div class="text-center" style="margin-top: var(--space-lg);">
         <a href="admissions.html" class="btn btn-primary btn-lg">Start Online Application Now &rarr;</a>
       </div>
     </div>
   </section>
-
- 
 
   <!-- Campus Facilities Preview -->
   <section class="section section-alt">
@@ -903,7 +774,7 @@
       <div class="section-header reveal text-center">
         <span class="section-tag">Campus Infrastructure & Life</span>
         <h2 class="section-title">A World-Class Campus Designed for <span class="highlight">Success & Well-Being</span></h2>
-        <p class="section-description">Aspire College on Syphon Road provides a purpose-built, secure environment featuring separate campuses for boys and girls, spacious grounds, and modern academic facilities.</p>
+        <p class="section-description">We provides a purpose-built, secure environment featuring separate campuses for boys and girls, spacious grounds, and modern academic facilities.</p>
       </div>
 
       <div class="grid grid-3" style="gap: var(--space-lg);">
@@ -922,7 +793,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
           </div>
           <h4 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--color-primary-dark);">Sports Playground</h4>
-          <p class="card-text" style="font-size: 13px;">Spacious open sports ground for cricket, football, volleyball, athletics, and annual sports gala competitions.</p>
+          <p class="card-text" style="font-size: 13px;">Spacious open sports ground for cricket, football, Badminton and annual sports gala competitions.</p>
         </div>
 
         <!-- 3. Hygienic Canteen -->
@@ -940,7 +811,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
           </div>
           <h4 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--color-primary-dark);">High-Tech IT Lab</h4>
-          <p class="card-text" style="font-size: 13px;">Modern Core-i5 computing systems, high-speed optical fiber internet, and programming software for ICS and DIT.</p>
+          <p class="card-text" style="font-size: 13px;">Modern computer systems, high-speed fiber-optic internet, and up-to-date programming software provide students with practical learning opportunities for ICS and DIT programs.</p>
         </div>
 
         <!-- 5. Science Laboratories -->
@@ -949,7 +820,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
           </div>
           <h4 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--color-primary-dark);">Science Laboratories</h4>
-          <p class="card-text" style="font-size: 13px;">Fully equipped Physics, Chemistry, and Biology practical labs meeting complete BISE Multan examination standards.</p>
+          <p class="card-text" style="font-size: 13px;">Fully equipped Physics, Chemistry, and Biology laboratories provide hands-on learning experiences, helping students strengthen scientific concepts through practical experiments and guided exploration.</p>
         </div>
 
         <!-- 6. Academic Library -->
@@ -958,7 +829,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
           </div>
           <h4 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--color-primary-dark);">Rich Academic Library</h4>
-          <p class="card-text" style="font-size: 13px;">Over 5,000 academic curriculum books, research reference texts, and past 10 years solved board papers.</p>
+          <p class="card-text" style="font-size: 13px;">A well-stocked library featuring academic books, reference materials, and diverse learning resources to support research, independent study, and academic excellence.</p>
         </div>
       </div>
     </div>
@@ -977,23 +848,24 @@
           <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: var(--space-xl);">
             <div style="display: flex; align-items: center; gap: 12px;">
               <svg width="20" height="20" color="var(--color-gold)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span><strong>Address:</strong> Syphon Road, near Mailsi, Garrison, Mailsi, 61200, Pakistan</span>
+              <span><strong>Address:</strong> Syphon Road, near Garrison, Mailsi, Punjab, Pakistan</span>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <svg width="20" height="20" color="var(--color-gold)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span><strong>Helpline:</strong> <a href="tel:03070891119" style="color:#ffffff; text-decoration: underline; font-weight: 700;">0307-0891119</a> | <strong>Tel:</strong> <a href="tel:0673202151" style="color:#ffffff; text-decoration: underline;">067-3202151</a></span>
+             <span><strong>Helpline:</strong> <a href="tel:03070891119" style="color:#ffffff; text-decoration: none; font-weight: 400;">0307-0891119</a> | <strong>Tel:</strong> <a href="tel:0673202151" style="color:#ffffff; text-decoration: none;">067-3202151</a></span>
+
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <svg width="20" height="20" color="#25d366" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.52 1.09 2.52.73 2.98.69.46-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
-              <span><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" style="color:#25d366; font-weight:700; text-decoration:underline;">0303-7376611</a></span>
+              <span><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" style="color:#25d366; font-weight:600;">0303-7376611</a></span>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <svg width="20" height="20" color="var(--color-gold)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span><strong>Principal Email:</strong> <a href="mailto:principal.mailsi@aspirecolleges.edu.pk" style="color:#ffffff; text-decoration: underline;">principal.mailsi@aspirecolleges.edu.pk</a></span>
+              <span><strong>Principal Email:</strong> <a href="mailto:principal.mailsi@aspirecolleges.edu.pk" style="color:#ffffff; ">principal.mailsi@aspirecolleges.edu.pk</a></span>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
               <svg width="20" height="20" color="var(--color-gold)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              <span><strong>Office Hours:</strong> Monday – Saturday (8:00 AM – 2:00 PM)</span>
+              <span><strong>Office Hours:</strong> Monday – Saturday (8:00 AM – 2:00 PM)<br>Fri: 8:00 AM – 12:00 PM</span>
             </div>
           </div>
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -1026,9 +898,9 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               ASPIRE COLLEGE MAILSI
             </span>
-            <a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); font-weight: 700; text-decoration: underline;">
-              Open Full Map &rarr;
-            </a>
+            <a href="https://www.google.com/maps/place/ASPIRE+COLLEGE+MAILSI/@29.7819947,72.1758273,19.19z/data=!4m14!1m7!3m6!1s0x393c8f36699b746b:0xa9727dcd958ebd5!2sASPIRE+COLLEGE+MAILSI!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x!3m5!1s0x393c8f36699b746b:0xa9727dcd958ebd5!8m2!3d29.7818991!4d72.176424!16s%2Fg%2F11j7vnq01x?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <span>Get Driving Directions</span>
+          </a>
           </div>
         </div>
       </div>
@@ -1055,13 +927,25 @@
           </p>
           <div class="social-links">
             <a href="https://www.facebook.com/p/Aspire-College-Mailsi-100057492817780/" target="_blank" rel="noopener noreferrer" class="social-btn social-fb" title="Facebook">
-              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
             </a>
             <a href="https://www.instagram.com/aspirecollegemailsiofficial/" target="_blank" rel="noopener noreferrer" class="social-btn social-insta" title="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
             </a>
             <a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener noreferrer" class="social-btn social-wa" title="WhatsApp Helpline">
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              <svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            </a>
+          </div>
+
+          <!-- Developer Credit -->
+          <div class="footer-dev-credit">
+            <span class="dev-credit-text">Developed by</span>
+            <a href="https://www.linkedin.com/in/abdullahhussain006" target="_blank" rel="noopener noreferrer" class="dev-credit-link" title="Connect with Abdullah Hussain on LinkedIn">
+              <img src="images/abdullah-hussain.jpg" alt="Abdullah Hussain" class="dev-credit-avatar">
+              <span class="dev-credit-name">Abdullah Hussain</span>
+              <svg class="dev-linkedin-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
             </a>
           </div>
         </div>
@@ -1074,7 +958,7 @@
             <li class="footer-link-item"><a href="about.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>About Campus</a></li>
             <li class="footer-link-item"><a href="academics.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Academics</a></li>
             <li class="footer-link-item"><a href="admissions.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Admissions</a></li>
-            <li class="footer-link-item"><a href="staff.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Faculty & Staff</a></li>
+            <li class="footer-link-item"><a href="staff.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Faculty</a></li>
             <li class="footer-link-item"><a href="gallery.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Video Gallery</a></li>
             <li class="footer-link-item"><a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>Contact Campus</a></li>
           </ul>
@@ -1109,8 +993,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               <div>
                 <strong>Admissions Helpline & Tel:</strong><br>
-                <a href="tel:03070891119" style="font-weight: 700; color: var(--color-gold);">0307-0891119</a><br>
-                <span>Tel: </span><a href="tel:0673202151">067-3202151</a> | <span>WhatsApp: </span><a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener" style="color: #25d366;">0303-7376611</a>
+                Tel: </span><a href="tel:0673202151">067-3202151</a> <br> <span>WhatsApp:<a href="https://api.whatsapp.com/send?phone=923037376611" target="_blank" rel="noopener" style="color: #25d366;"> 0303-7376611</a>
               </div>
             </div>
             <div class="footer-contact-item">

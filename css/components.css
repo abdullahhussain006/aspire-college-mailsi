@@ -13,6 +13,9 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -56,8 +59,30 @@
   font-size: 14.5px;
   color: var(--color-text-muted);
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
+
+.card .btn,
+.card > .btn,
+.card > a.btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.card.text-center .btn,
+.card.text-center > .btn,
+.card.text-center > a.btn {
+  align-self: center;
+}
+
+/* Feature Cards Grid (Why Choose Us) - Equal Height Cards on Desktop */
+@media (min-width: 992px) {
+  .feature-cards-grid > .card {
+    min-height: 335px;
+  }
+}
+
 
 /* Program Specific Card */
 .program-card {
@@ -139,6 +164,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.program-card-footer .btn {
+  margin-left: auto;
 }
 
 /* Card & Program Card Responsive for Mini Tabs (max-width: 991px) */
@@ -1042,3 +1071,49 @@ textarea.form-control {
 .form-step.active {
   display: block;
 }
+
+/* Campus Leadership Profiles: Director & Principal Responsive Images */
+.leadership-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.director-img {
+  max-height: 385px;
+  object-position: center 25%;
+}
+
+.principal-img {
+  max-height: 323px;
+  object-position: center top;
+}
+
+/* Tablet Screens (max-width: 991px) - Director scales to match principal image size */
+@media (max-width: 991px) {
+  .director-img {
+    max-height: 323px !important;
+  }
+  .principal-img {
+    max-height: 323px !important;
+  }
+}
+
+/* Mobile Screens (max-width: 768px) - Both images adapt smoothly for mobile viewports */
+@media (max-width: 768px) {
+  .director-img,
+  .principal-img {
+    max-height: 280px !important;
+  }
+}
+
+/* Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .director-img,
+  .principal-img {
+    max-height: 240px !important;
+  }
+}
+
